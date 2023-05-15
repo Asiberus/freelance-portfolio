@@ -1,3 +1,3 @@
 <template>
-    <h2>Prestations</h2>
+  <h2>Prestations</h2>
 </template>

@@ -1,11 +1,7 @@
 <template>
-    <div>Page d'accueil</div>
+  <div>Page d'accueil</div>
 </template>
 
-<script>
+<script></script>
 
-</script>
-
-<style scoped>
-
-</style>
+<style scoped></style>
