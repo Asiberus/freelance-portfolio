@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper">
+    <div class="textarea-wrapper">
         <label :for="id">{{ label }}</label>
         <textarea
             :id="id"
@@ -14,6 +14,7 @@ const props = defineProps({
     label: { type: String, required: true },
     modelValue: { type: String, required: true },
 })
+
 defineEmits<{
     (e: 'update:modelValue', value: string): void
 }>()
@@ -22,16 +23,24 @@ const id = props.label + Math.floor(Math.random() * 1000)
 </script>
 
 <style scoped lang="scss">
-.wrapper {
+.textarea-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
+    width: 100%;
 
     textarea {
-        min-width: 700px;
-        min-height: 150px;
+        min-height: 150px; // TODO: maybe change for different screen size
+        padding: 0.75rem 0.75rem;
+        border: 1px solid #bbb;
+        border-radius: 4px;
+        outline: none;
         resize: vertical;
+
+        &:active,
+        &:focus,
+        &:hover {
+            border-color: #888;
+        }
     }
 }
 </style>

@@ -9,7 +9,8 @@
             </p>
             <p>
                 Si votre besoin ne se trouve pas dans liste ci dessous, n’hésitez pas à m’écrire
-                (contact). Nous pourrons ensuite discuter de la réalisation de votre demande.
+                (<NuxtLink to="/contact" class="text-primary hover-effect">contact</NuxtLink>). Nous
+                pourrons ensuite discuter de la réalisation de votre demande.
             </p>
         </div>
 

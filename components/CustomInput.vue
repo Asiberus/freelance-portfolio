@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper">
+    <div class="input-wrapper">
         <label :for="id">{{ label }}</label>
         <input
             :id="id"
@@ -13,6 +13,7 @@ const props = defineProps({
     label: { type: String, required: true },
     modelValue: { type: String, required: true },
 })
+
 defineEmits<{
     (e: 'update:modelValue', value: string): void
 }>()
@@ -21,15 +22,22 @@ const id = props.label + Math.floor(Math.random() * 1000)
 </script>
 
 <style scoped lang="scss">
-.wrapper {
+.input-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
+    width: 100%;
 
     input {
-        min-width: 700px;
-        height: 35px;
+        padding: 0.75rem 0.75rem;
+        border: 1px solid #bbb;
+        border-radius: 4px;
+        outline: none;
+
+        &:active,
+        &:focus,
+        &:hover {
+            border-color: #888;
+        }
     }
 }
 </style>

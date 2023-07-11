@@ -81,7 +81,7 @@
     </div>
 
     <div class="prestation-link">
-        <NuxtLink to="/prestations">
+        <NuxtLink to="/prestations" class="hover-effect">
             Plus d'informations sur l'ensemble de mes prestations
             <nuxt-icon name="right-arrow"></nuxt-icon>
         </NuxtLink>
@@ -109,7 +109,7 @@
                 Travailler avec moi, c'est collaborer avec un partenaire fiable et dévoué, prêt à
                 donner vie à votre vision en ligne.
             </p>
-            <NuxtLink to="/a-propos" class="description__link">
+            <NuxtLink to="/a-propos" class="description__link hover-effect">
                 En savoir plus <nuxt-icon name="right-arrow"></nuxt-icon>
             </NuxtLink>
         </div>
@@ -151,17 +151,17 @@
     </div>
 
     <div class="contact">
-        <div class="contact__content">
+        <form>
             <h3>Demandez un devis!</h3>
 
             <CustomInput v-model="form.name" label="Nom Prénom (ou société)"></CustomInput>
-
             <CustomInput v-model="form.email" label="Adresse e-mail"></CustomInput>
-
             <CustomTextArea v-model="form.message" label="Message"></CustomTextArea>
-
-            <button>Envoyer</button>
-        </div>
+            <button type="button" class="btn mt-1">
+                Envoyer
+                <nuxt-icon name="email-send" filled></nuxt-icon>
+            </button>
+        </form>
     </div>
 </template>
 
@@ -347,15 +347,19 @@ const form = ref({
 .contact {
     margin-bottom: 5rem;
 
-    &__content {
-        width: auto;
+    form {
+        margin: auto;
+        width: 700px;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        row-gap: 0.5rem;
+        row-gap: 0.75rem;
 
         h3 {
             font-size: 2rem;
+        }
+
+        .nuxt-icon {
+            font-size: 1.25rem;
         }
     }
 }

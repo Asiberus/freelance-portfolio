@@ -127,7 +127,7 @@
 
     &__logo {
         max-width: 75px;
-        filter: grayscale(80%);
+        filter: grayscale(50%);
         transition: all 0.2s ease;
 
         &:hover {
