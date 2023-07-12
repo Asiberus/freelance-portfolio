@@ -60,8 +60,8 @@
     padding: 5rem;
 
     &__title {
-        font-size: 2rem;
-        margin-bottom: 0.75rem;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
     }
 
     &__description {

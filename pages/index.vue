@@ -21,7 +21,7 @@
             <!--            <p>Aide au référencement</p>-->
             <!--            <p>Refonte graphique</p>-->
         </div>
-        <img src="/img/build.jpg" alt="build" />
+        <img src="/img/build.svg" alt="build" />
     </div>
     <div class="section">
         <div class="section__content">

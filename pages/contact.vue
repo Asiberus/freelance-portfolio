@@ -4,7 +4,7 @@
             <h2 class="title">Demandez un devis!</h2>
             <p>
                 Si vous avez un projet de site vitrine, un e-shop, un site de gestion de société ou
-                tout autre projet vous pouvez me contacter grace au formulaire ci dessous ou bien
+                tout autre projet, vous pouvez me contacter grace au formulaire ci dessous ou bien
                 avec mes coordonnées ci contre. <br />
                 N’hésitez pas à :
             </p>
@@ -16,9 +16,9 @@
                     <NuxtLink to="/prestations" class="text-primary hover-effect">
                         prestations
                     </NuxtLink>
-                    souhaitées si vous les savez (par leur référence)
+                    souhaitées si vous les connaissez (par leur référence)
                 </li>
-                <li>Indiquer votre numéro de téléphone pour que je puisse vous recontacter</li>
+                <li>Indiquer un numéro de téléphone pour que je puisse vous recontacter</li>
             </ul>
             <form>
                 <CustomInput v-model="form.name" label="Nom Prénom (ou société)"></CustomInput>
@@ -31,39 +31,52 @@
             </form>
         </div>
         <div class="contact">
+            <img src="/img/home.svg" alt="home" class="contact__img" />
+
             <h2 class="title">Contact</h2>
             <p>
                 <nuxt-icon name="email2" class="contact__icon" filled></nuxt-icon>
                 <span>:</span>
                 contact@raphaelbeekmann.com
             </p>
-            <p class="mb-2">
+            <p>
                 <nuxt-icon name="phone" class="contact__icon" filled></nuxt-icon>
                 <span>:</span>
                 +33 6 25 65 22 72
             </p>
 
-            <hr />
-
-            <h2 class="title mt-2">Mes réseaux</h2>
+            <h2 class="title mt-1">Mes réseaux</h2>
             <div class="social-networks">
                 <NuxtLink
                     to="https://www.linkedin.com/in/raphael-beekmann-9379b9134/"
-                    target="_blank">
+                    target="_blank"
+                    class="social-networks__link">
                     <img
                         src="/icon/linkedin.svg"
                         alt="linkedin-logo"
-                        class="social-networks__logo" />
+                        class="social-networks__link__logo" />
+                    <span class="social-networks__link__caption">LinkedIn</span>
                 </NuxtLink>
-                <NuxtLink to="https://www.instagram.com/raphael.beekmann/" target="_blank">
+
+                <NuxtLink
+                    to="https://www.malt.fr/profile/raphaelbeekmann1"
+                    target="_blank"
+                    class="social-networks__link">
+                    <img src="/icon/malt.svg" alt="malt-logo" class="social-networks__link__logo" />
+                    <span class="social-networks__link__caption">Malt</span>
+                </NuxtLink>
+
+                <NuxtLink
+                    to="https://www.instagram.com/raphael.beekmann/"
+                    target="_blank"
+                    class="social-networks__link">
                     <img
                         src="/icon/instagram.svg"
                         alt="instagram-logo"
-                        class="social-networks__logo" />
+                        class="social-networks__link__logo" />
+                    <span class="social-networks__link__caption">Instagram</span>
                 </NuxtLink>
             </div>
-
-            <hr />
         </div>
     </div>
 </template>
@@ -109,11 +122,20 @@ const form = ref({
     }
 
     .contact {
+        display: flex;
+        flex-direction: column;
+
+        &__img {
+            align-self: center;
+            max-width: 40%;
+            margin-bottom: 1rem;
+        }
+
         .title {
             margin-bottom: 2rem;
         }
 
-        p {
+        & > p {
             display: flex;
             column-gap: 0.5rem;
             margin-bottom: 1rem;
@@ -129,13 +151,32 @@ const form = ref({
             gap: 2rem;
             padding-left: 1rem;
 
-            &__logo {
-                max-width: 75px;
-                filter: grayscale(50%);
-                transition: all 0.2s ease;
+            &__link {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
 
                 &:hover {
-                    filter: grayscale(0);
+                    img {
+                        filter: grayscale(0);
+                    }
+
+                    span {
+                        color: #000;
+                    }
+                }
+
+                img {
+                    max-width: 75px;
+                    filter: grayscale(25%);
+                    transition: all 0.2s ease;
+                }
+
+                span {
+                    color: #777;
+                    font-size: 0.9rem;
+                    line-height: 1.25rem;
+                    transition: all 0.2s ease;
                 }
             }
         }
