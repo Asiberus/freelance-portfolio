@@ -14,7 +14,7 @@
                 etc.
             </li>
         </ul>
-        Le SEO est principalement intéressant pour des sites vitrine ou des e-shop.
+        Le SEO est principalement intéressant pour des sites vitrines ou des e-shop.
     </reference-item>
     <reference-item title="Traduction texte traduits fournis" reference="CTN-002">
         Afin d’élargir votre audience, il est possible d’implémenter un système de traduction sur

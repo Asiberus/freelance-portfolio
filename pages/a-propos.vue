@@ -3,7 +3,7 @@
         <div class="section">
             <img src="/img/computer.svg" alt="computer" />
             <div>
-                <h2>Qui suis-je ?</h2>
+                <h2 class="title-primary">Qui suis-je ?</h2>
                 <p>
                     Je suis concepteur de site web depuis maintenant une dizaine d’année. J’ai tout
                     d’abord intégré une école d’ingénieur. J’y ai appris la base de mes compétences,
@@ -24,7 +24,7 @@
         </div>
         <div class="section">
             <div>
-                <h2>Mes valeurs</h2>
+                <h2 class="title-primary">Mes valeurs</h2>
                 <p>
                     Le web est, pour moi, le futur des applications informatiques. Plus besoin
                     d’installation, de longues configurations ou de limitations relatives à un
@@ -52,7 +52,7 @@
         <div class="section">
             <img src="/img/step.svg" alt="step" />
             <div>
-                <h2>Comment se déroule la création d’un site web ?</h2>
+                <h2 class="title-primary">Comment se déroule la création d’un site web ?</h2>
                 <p>
                     Chaque projet commence par l’établissement d’un cahier des charges. Ce document
                     décrit les besoins du client et l’ensemble des fonctionnalités qui devront être
@@ -90,6 +90,7 @@
 
     .section {
         display: flex;
+        align-items: center;
         column-gap: 2rem;
         margin-bottom: 2rem;
 

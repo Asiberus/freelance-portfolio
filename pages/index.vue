@@ -3,10 +3,7 @@
         <div class="jumbotron__text">
             <h2>Design & Construction de site web</h2>
             <p>Création de site web performant, impactant et moderne.</p>
-            <!--            <p>Je suis à votre service pour créér un site web performat, impactant et moderne</p>-->
-            <tile-link to="/contact">
-                Demander un devis <nuxt-icon name="right-arrow"></nuxt-icon>
-            </tile-link>
+            <tile-link to="/contact" include-arrow>Demander un devis</tile-link>
             <!--            <p>-->
             <!--                De la conception à l’ouverture du site web, je suis là pour vous accompagner dans la-->
             <!--                réalisation de votre projet, que ce soit pour vous positionner en ligne, vendre vos-->
@@ -152,7 +149,7 @@
 
     <div class="contact">
         <form>
-            <h3>Demandez un devis!</h3>
+            <h3 class="title-primary">Demandez un devis!</h3>
 
             <CustomInput v-model="form.name" label="Nom Prénom (ou société)"></CustomInput>
             <CustomInput v-model="form.email" label="Adresse e-mail"></CustomInput>
@@ -206,7 +203,7 @@ const form = ref({
     padding: 5rem 10rem;
 
     &__content {
-        background-color: #eee;
+        background-color: var(--primary-100);
         padding: 5rem;
         border-radius: 3rem;
 
@@ -238,7 +235,7 @@ const form = ref({
         transition: all 0.2s ease;
 
         &:hover {
-            background-color: #eee;
+            background-color: var(--primary-100);
         }
 
         &__title {
@@ -261,18 +258,41 @@ const form = ref({
     margin-bottom: 5rem;
     display: flex;
     justify-content: flex-end;
+
+    &:hover {
+        color: var(--primary-900);
+    }
 }
 
 .objectif {
     padding: 5rem;
-    background-color: #555;
-    color: white;
+    background-color: var(--primary-900);
+    color: var(--primary-25);
 
     &__content {
+        position: relative;
+        width: fit-content;
+        margin: 0 auto;
+        font-size: 1.4rem;
         font-style: italic;
         font-weight: normal;
-        text-align: center;
-        margin: 0;
+
+        &::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: -30px;
+            font-size: 3rem;
+        }
+
+        &::after {
+            content: '"';
+            position: absolute;
+            bottom: -20px;
+            right: -30px;
+            font-size: 3rem;
+            transform: rotate(180deg);
+        }
     }
 }
 
@@ -304,6 +324,10 @@ const form = ref({
 
         &__link {
             align-self: flex-end;
+
+            &:hover {
+                color: var(--primary-900);
+            }
         }
     }
 }
@@ -337,7 +361,7 @@ const form = ref({
             }
 
             img {
-                filter: grayscale(80%);
+                filter: grayscale(50%);
                 transition: all 0.2s ease;
             }
         }
@@ -356,6 +380,7 @@ const form = ref({
 
         h3 {
             font-size: 2rem;
+            margin-bottom: 1rem;
         }
 
         .nuxt-icon {

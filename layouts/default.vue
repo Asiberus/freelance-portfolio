@@ -1,13 +1,17 @@
 <template>
     <div class="wrapper">
         <header class="header">
-            <h1 class="header__title">Raphael BEEKMANN</h1>
+            <NuxtLink to="/" class="header__title">
+                <h1>Raphael <span class="primary">BEEKMANN</span></h1>
+            </NuxtLink>
+
             <nav class="header__menu">
                 <template v-for="link of LINKS" :key="link.to">
                     <NuxtLink :to="link.to" class="header__menu__link" active-class="active">
                         {{ link.name }}
                     </NuxtLink>
                 </template>
+                <tile-link to="/contact" small>Demander un devis</tile-link>
             </nav>
         </header>
 
@@ -37,7 +41,6 @@ const LINKS = [
     { name: 'Accueil', to: '/' },
     { name: 'Prestations', to: '/prestations' },
     { name: 'À propos', to: '/a-propos' },
-    { name: 'Demander un devis', to: '/contact' },
 ]
 </script>
 
@@ -48,29 +51,39 @@ const LINKS = [
 }
 
 .header {
-    //position: sticky;
-    //top: 0;
-    background-color: #f4a261;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding: 1.5rem;
+
+    &__title {
+        h1 {
+            margin-bottom: 0;
+            font-weight: 500;
+            font-size: 2.5rem;
+
+            .primary {
+                color: var(--primary-800);
+                font-weight: 800;
+            }
+        }
+    }
 
     &__menu {
         display: flex;
         align-items: center;
-        column-gap: 2rem;
+        column-gap: 0.5rem;
 
         &__link {
-            color: white;
+            padding: 0.5rem 1rem;
             transition: all 0.2s ease;
 
             &:hover {
-                color: black;
+                color: var(--primary-800);
             }
 
             &.active {
-                color: #222;
+                color: var(--primary-900);
             }
         }
     }
@@ -81,7 +94,7 @@ const LINKS = [
 }
 
 footer {
-    background-color: cornflowerblue;
+    background-color: var(--primary-200);
     padding: 1rem;
 
     display: grid;
