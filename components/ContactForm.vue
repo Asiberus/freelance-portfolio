@@ -3,8 +3,9 @@
         name="contact"
         data-netlify="true"
         data-netlify-honeypot="honeypot"
-        @submit.prevent="submit()">
+        @submit.prevent="submit($event)">
         <input type="hidden" name="honeypot" />
+        <input type="hidden" name="form-name" value="contact" />
         <CustomInput v-model="form.name" label="Nom Prénom (ou société)" name="name"></CustomInput>
         <CustomInput v-model="form.email" label="Adresse e-mail" name="email" type="email">
         </CustomInput>
@@ -34,14 +35,15 @@ watch(form, value => {
     else formValidity.value = true
 })
 
-function submit() {
-    const { name, email, message } = form
-    const formData = new FormData()
-    formData.append('name', name)
-    formData.append('email', email)
-    formData.append('message', message)
+function submit(event): void {
+    const formData = new FormData(event.target)
+    // const { name, email, message } = form
+    // const formData = new FormData()
+    // formData.append('name', name)
+    // formData.append('email', email)
+    // formData.append('message', message)
 
-    fetch('/contact', {
+    fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams(formData).toString(),
