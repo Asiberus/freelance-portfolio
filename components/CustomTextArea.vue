@@ -4,6 +4,7 @@
         <textarea
             :id="id"
             :value="modelValue"
+            :name="name"
             @input="$emit('update:modelValue', $event.target.value)">
         </textarea>
     </div>
@@ -12,6 +13,7 @@
 <script setup lang="ts">
 const props = defineProps({
     label: { type: String, required: true },
+    name: { type: String, required: true },
     modelValue: { type: String, required: true },
 })
 

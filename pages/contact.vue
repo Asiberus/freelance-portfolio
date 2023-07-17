@@ -20,15 +20,7 @@
                 </li>
                 <li>Indiquer un numéro de téléphone pour que je puisse vous recontacter</li>
             </ul>
-            <form>
-                <CustomInput v-model="form.name" label="Nom Prénom (ou société)"></CustomInput>
-                <CustomInput v-model="form.email" label="Adresse e-mail"></CustomInput>
-                <CustomTextArea v-model="form.message" label="Message"></CustomTextArea>
-                <button type="button" class="btn mt-1">
-                    Envoyer
-                    <nuxt-icon name="email-send" filled></nuxt-icon>
-                </button>
-            </form>
+            <ContactForm></ContactForm>
         </div>
         <div class="contact">
             <img src="/img/home.svg" alt="home" class="contact__img" />
@@ -81,11 +73,12 @@
     </div>
 </template>
 
-<script setup>
-const form = ref({
-    name: '',
-    email: '',
-    message: '',
+<script>
+import { defineComponent } from 'vue'
+import ContactForm from '~/components/ContactForm.vue'
+
+export default defineComponent({
+    components: { ContactForm },
 })
 </script>
 
@@ -108,12 +101,6 @@ const form = ref({
 
         ul {
             margin: 0 0 1rem;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            row-gap: 0.75rem;
         }
 
         .nuxt-icon {

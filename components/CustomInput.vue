@@ -4,14 +4,18 @@
         <input
             :id="id"
             :value="modelValue"
+            :name="name"
+            :type="type"
             @input="$emit('update:modelValue', $event.target.value)" />
     </div>
 </template>
 
 <script setup lang="ts">
 const props = defineProps({
-    label: { type: String, required: true },
     modelValue: { type: String, required: true },
+    label: { type: String, required: true },
+    name: { type: String, required: true },
+    type: { type: String, default: 'text' },
 })
 
 defineEmits<{
