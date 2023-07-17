@@ -32,6 +32,7 @@
                 <div>+33 6 25 65 22 72</div>
                 <div>Paris</div>
             </div>
+            <div>Image by storyset on Freepik</div>
         </footer>
     </div>
 </template>

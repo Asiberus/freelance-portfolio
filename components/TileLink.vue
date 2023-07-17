@@ -20,13 +20,13 @@ const props = defineProps({
 .tile-link {
     padding: 1rem 1.5rem;
     font-size: 1.25rem;
-    background-color: var(--primary-500);
+    background-color: var(--primary-600);
     border-radius: 5rem;
     width: max-content;
     transition: all 0.2s ease;
 
     &:hover {
-        background-color: var(--primary-600);
+        background-color: var(--primary-800);
 
         .arrow {
             transform: translateX(0);

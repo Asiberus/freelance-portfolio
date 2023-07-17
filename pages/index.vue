@@ -1,7 +1,10 @@
 <template>
     <div class="jumbotron">
         <div class="jumbotron__text">
-            <h2>Design & Construction de site web</h2>
+            <h2>
+                <span class="background-primarys">Design & Construction de site web</span>
+                <!--                Design & Construction de site web-->
+            </h2>
             <p>Création de site web performant, impactant et moderne.</p>
             <tile-link to="/contact" include-arrow>Demander un devis</tile-link>
             <!--            <p>-->
@@ -92,9 +95,9 @@
     </div>
 
     <div class="whoami">
-        <img src="/img/dev.jpg" alt="dev" width="550" class="img" />
+        <img src="/img/whoami.svg" alt="dev" width="550" class="img" />
         <div class="description">
-            <h3>A propos de moi</h3>
+            <h3 class="background-primary">A propos de moi</h3>
             <p>
                 Je suis un développeur de sites web passionné et investit dans la création de sites
                 fonctionnels, esthétiques et performants pour mes clients. Mon expérience et ma
@@ -113,7 +116,7 @@
     </div>
 
     <div class="trust-me">
-        <h3>Ils me font confiance</h3>
+        <h3><span class="background-primary">Ils me font confiance</span></h3>
         <div class="logo-list">
             <div title="Tout Doux" class="logo-list__item">Tout Doux</div>
             <NuxtLink
@@ -149,7 +152,7 @@
 
     <div class="contact">
         <form>
-            <h3 class="title-primary">Demandez un devis!</h3>
+            <h3 class="background-primary">Demandez un devis!</h3>
 
             <CustomInput v-model="form.name" label="Nom Prénom (ou société)"></CustomInput>
             <CustomInput v-model="form.email" label="Adresse e-mail"></CustomInput>
@@ -266,7 +269,7 @@ const form = ref({
 
 .objectif {
     padding: 5rem;
-    background-color: var(--primary-900);
+    background-color: var(--primary-800);
     color: var(--primary-25);
 
     &__content {
@@ -299,12 +302,8 @@ const form = ref({
 .whoami {
     display: flex;
     padding: 5rem 5rem 5rem 10rem;
+    //justify-content: center;
     column-gap: 3rem;
-
-    .img {
-        border: 3px solid black;
-        border-radius: 1.5rem;
-    }
 
     .description {
         padding: 1rem;

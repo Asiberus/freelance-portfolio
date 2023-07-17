@@ -1,6 +1,6 @@
 <template>
     <div class="reference">
-        <h2 class="reference__title title-primary">Prestations</h2>
+        <h2 class="reference__title background-primary">Prestations</h2>
         <div class="reference__description">
             <p>
                 Vous trouverez ici une liste des prestations que propose. Celle-ci sont réparties en
