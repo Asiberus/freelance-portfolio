@@ -185,7 +185,6 @@
 }
 
 .section {
-    color: #264653;
     padding: 5rem 10rem;
 
     &__content {

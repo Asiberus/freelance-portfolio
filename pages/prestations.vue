@@ -85,9 +85,12 @@
             transition: all 0.2s ease;
             border-radius: 0.3rem;
 
-            &:hover,
+            &:hover {
+                background-color: var(--primary-300);
+            }
+
             &.active {
-                background-color: #d5d5d5;
+                background-color: var(--primary-400);
             }
         }
     }

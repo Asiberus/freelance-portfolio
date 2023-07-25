@@ -36,7 +36,7 @@ defineProps({
         }
 
         &__ref {
-            color: #909090;
+            color: var(--primary-900);
             font-size: 0.8rem;
             font-style: italic;
         }
