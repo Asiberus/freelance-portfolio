@@ -151,27 +151,10 @@
     </div>
 
     <div class="contact">
-        <form>
-            <h3 class="background-primary">Demandez un devis!</h3>
-
-            <CustomInput v-model="form.name" label="Nom Prénom (ou société)"></CustomInput>
-            <CustomInput v-model="form.email" label="Adresse e-mail"></CustomInput>
-            <CustomTextArea v-model="form.message" label="Message"></CustomTextArea>
-            <button type="button" class="btn mt-1">
-                Envoyer
-                <nuxt-icon name="email-send" filled></nuxt-icon>
-            </button>
-        </form>
+        <h3 class="background-primary">Demandez un devis!</h3>
+        <ContactForm></ContactForm>
     </div>
 </template>
-
-<script setup>
-const form = ref({
-    name: '',
-    email: '',
-    message: '',
-})
-</script>
 
 <style scoped lang="scss">
 .jumbotron {
@@ -368,23 +351,12 @@ const form = ref({
 }
 
 .contact {
-    margin-bottom: 5rem;
+    width: 700px;
+    margin: 0 auto 5rem;
 
-    form {
-        margin: auto;
-        width: 700px;
-        display: flex;
-        flex-direction: column;
-        row-gap: 0.75rem;
-
-        h3 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .nuxt-icon {
-            font-size: 1.25rem;
-        }
+    h3 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
     }
 }
 </style>
