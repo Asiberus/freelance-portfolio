@@ -20,6 +20,7 @@
                 </li>
                 <li>Indiquer un numéro de téléphone pour que je puisse vous recontacter</li>
             </ul>
+
             <ContactForm></ContactForm>
         </div>
         <div class="contact">
@@ -101,10 +102,6 @@ export default defineComponent({
 
         ul {
             margin: 0 0 1rem;
-        }
-
-        .nuxt-icon {
-            font-size: 1.25rem;
         }
     }
 
