@@ -28,14 +28,18 @@
 
             <h2 class="title">Contact</h2>
             <p>
-                <nuxt-icon name="email2" class="contact__icon" filled></nuxt-icon>
-                <span>:</span>
-                contact@raphaelbeekmann.com
+                <NuxtLink to="mailto:contact@raphaelbeekmann.com">
+                    <nuxt-icon name="email2" class="contact__icon" filled></nuxt-icon>
+                    <span>:</span>
+                    contact@raphaelbeekmann.com
+                </NuxtLink>
             </p>
             <p>
-                <nuxt-icon name="phone" class="contact__icon" filled></nuxt-icon>
-                <span>:</span>
-                +33 6 25 65 22 72
+                <NuxtLink to="tel:+33 6 25 65 22 72">
+                    <nuxt-icon name="phone" class="contact__icon" filled></nuxt-icon>
+                    <span>:</span>
+                    +33 6 25 65 22 72
+                </NuxtLink>
             </p>
 
             <h2 class="title mt-1">Mes réseaux</h2>

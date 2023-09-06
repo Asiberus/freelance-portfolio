@@ -18,8 +18,8 @@ const props = defineProps({
 
 <style scoped lang="scss">
 .tile-link {
-    padding: 1rem 1.5rem;
-    font-size: 1.25rem;
+    padding: 1rem 1rem;
+    font-size: 1.2rem;
     background-color: var(--primary-600);
     border-radius: 5rem;
     width: max-content;
@@ -30,7 +30,6 @@ const props = defineProps({
 
         .arrow {
             transform: translateX(0);
-            margin-left: 1.5rem;
         }
     }
 

@@ -5,13 +5,16 @@
                 <h1>Raphael <span class="primary">BEEKMANN</span></h1>
             </NuxtLink>
 
-            <nav class="header__menu">
+            <nav v-if="isLargeDevice" class="header__menu">
                 <template v-for="link of LINKS" :key="link.to">
                     <NuxtLink :to="link.to" class="header__menu__link" active-class="active">
                         {{ link.name }}
                     </NuxtLink>
                 </template>
                 <tile-link to="/contact" small>Demander un devis</tile-link>
+            </nav>
+            <nav v-else>
+                <nuxt-icon name="menu" class="header__icon"></nuxt-icon>
             </nav>
         </header>
 
@@ -20,19 +23,20 @@
         </main>
 
         <footer>
+            <button
+                type="button"
+                class="up-btn"
+                title="Cliquez pour revenir en haut"
+                @click="scrollToTheTop()">
+                <nuxt-icon name="up-arrow" filled></nuxt-icon>
+            </button>
+
             <div class="plan">
                 <template v-for="link of LINKS" :key="link.to">
                     <NuxtLink :to="link.to" class="hover-effect">{{ link.name }}</NuxtLink>
                     <span class="">|</span>
                 </template>
                 <NuxtLink to="/contact" class="hover-effect">Contact</NuxtLink>
-                <button
-                    type="button"
-                    class="up-btn"
-                    title="Cliquez pour revenir en haut"
-                    @click="scrollToTheTop()">
-                    <nuxt-icon name="up-arrow" filled></nuxt-icon>
-                </button>
             </div>
             <div class="contact-wrapper">
                 <div class="name">
@@ -41,17 +45,17 @@
                     <h3>Design & Construction de site web</h3>
                 </div>
                 <div class="contact">
-                    <div class="contact__item">
+                    <NuxtLink to="mailto:contact@raphaelbeekmann.com" class="contact__item">
                         <nuxt-icon name="email2" filled></nuxt-icon>
                         <span>:</span>
                         contact@raphaelbeekmann.com
-                    </div>
-                    <span>•</span>
-                    <div class="contact__item">
+                    </NuxtLink>
+
+                    <NuxtLink to="tel:+33 6 25 65 22 72" class="contact__item">
                         <nuxt-icon name="phone" filled></nuxt-icon>
                         <span>:</span>
                         +33 6 25 65 22 72
-                    </div>
+                    </NuxtLink>
                 </div>
                 <div class="social-networks">
                     <NuxtLink
@@ -83,11 +87,29 @@
 </template>
 
 <script setup lang="ts">
+import { ref, onBeforeMount } from 'vue'
+
 const LINKS = [
     { name: 'Accueil', to: '/' },
     { name: 'Prestations', to: '/prestations' },
     { name: 'À propos', to: '/a-propos' },
 ]
+
+const isLargeDevice = ref(true)
+
+onBeforeMount(() => {
+    const mediaQuery = window.matchMedia('(min-width: 768px)')
+
+    updateIsLargeDevice(mediaQuery.matches)
+
+    mediaQuery.addEventListener('change', ({ matches }: MediaQueryListEvent) =>
+        updateIsLargeDevice(matches)
+    )
+})
+
+function updateIsLargeDevice(value: boolean): void {
+    isLargeDevice.value = value
+}
 
 function scrollToTheTop(): void {
     window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -110,7 +132,8 @@ function scrollToTheTop(): void {
         h1 {
             margin-bottom: 0;
             font-weight: 500;
-            font-size: 2.5rem;
+            font-size: clamp(1.25rem, 3vw, 3rem);
+            white-space: nowrap;
 
             .primary {
                 color: var(--primary-800);
@@ -122,11 +145,11 @@ function scrollToTheTop(): void {
     &__menu {
         display: flex;
         align-items: center;
-        column-gap: 0.5rem;
+        column-gap: clamp(0.5rem, 2vw, 2.5rem);
 
         &__link {
-            padding: 0.5rem 1rem;
             transition: all 0.2s ease;
+            white-space: nowrap;
 
             &:hover {
                 color: var(--primary-800);
@@ -137,28 +160,39 @@ function scrollToTheTop(): void {
             }
         }
     }
+
+    &__icon {
+        font-size: clamp(1.5rem, 6vw, 2.5rem);
+        color: var(--primary-800);
+        cursor: pointer;
+    }
 }
 
 footer {
+    position: relative;
+
+    .up-btn {
+        all: unset;
+        font-size: 2.5rem;
+        position: absolute;
+        top: -3rem;
+        right: 0.5rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &:hover {
+            transform: translateY(-5px);
+        }
+    }
+
     .plan {
         background-color: var(--primary-700);
         display: flex;
         justify-content: center;
-        column-gap: 1.5rem;
-        padding: 1rem;
-
-        .up-btn {
-            all: unset;
-            font-size: 2rem;
-            position: absolute;
-            right: 2rem;
-            cursor: pointer;
-            transition: all 0.2s ease;
-
-            &:hover {
-                transform: translateY(-5px);
-            }
-        }
+        padding: 1rem 2rem;
+        flex-wrap: wrap;
+        column-gap: clamp(0.5rem, 5vw, 1.5rem);
+        font-size: clamp(0.5rem, 5vw, 1rem);
     }
 
     .contact-wrapper {
@@ -167,22 +201,32 @@ footer {
 
         .name {
             display: flex;
+            flex-direction: column;
             justify-content: center;
+            align-items: center;
+            //flex-wrap: wrap;
             column-gap: 1.5rem;
+            margin-bottom: 1rem;
 
             h3,
             span {
-                font-size: 1.75rem;
+                //font-size: 1.75rem;
+                font-size: clamp(1.5rem, 5vw, 1.75rem);
                 color: white;
-                margin-bottom: 1rem;
+                margin: 0;
+                //white-space: nowrap;
+                text-align: center;
+            }
+
+            @media (min-width: 1060px) {
+                flex-direction: row;
             }
         }
 
         .contact {
             display: flex;
             justify-content: center;
-            //align-items: center;
-            //flex-direction: column;
+            flex-wrap: wrap;
             column-gap: 1.5rem;
             color: white;
             margin-bottom: 1rem;
@@ -211,7 +255,7 @@ footer {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                background-color: var(--primary-300);
+                background-color: var(--primary-200);
                 cursor: pointer;
                 transition: all 0.2s ease;
 
@@ -227,9 +271,9 @@ footer {
 
         .credit {
             text-align: right;
-            font-size: 0.75rem;
+            font-size: 0.6rem;
             font-style: italic;
-            color: var(--primary-500);
+            color: var(--primary-700);
         }
     }
 }

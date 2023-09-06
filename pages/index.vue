@@ -1,27 +1,11 @@
 <template>
     <div class="jumbotron">
+        <img src="/img/build.svg" alt="build" />
         <div class="jumbotron__text">
-            <h2>
-                <span class="background-primarys">Design & Construction de site web</span>
-                <!--                Design & Construction de site web-->
-            </h2>
+            <h2>Design & Construction de site web</h2>
             <p>Création de site web performant, impactant et moderne.</p>
             <tile-link to="/contact" include-arrow>Demander un devis</tile-link>
-            <!--            <p>-->
-            <!--                De la conception à l’ouverture du site web, je suis là pour vous accompagner dans la-->
-            <!--                réalisation de votre projet, que ce soit pour vous positionner en ligne, vendre vos-->
-            <!--                produits ou améliorer la gestion interne de votre société.-->
-            <!--            </p>-->
-            <!--            <p>-->
-            <!--                Si vous n’avez qu’une simple idée ou bien une vision claire en tête, je saurai vous-->
-            <!--                guider tout au long du processus pour créer un site web moderne et impactant.-->
-            <!--            </p>-->
-            <!--            <p>Creation de site web</p>-->
-            <!--            <p>Accompagnement digital</p>-->
-            <!--            <p>Aide au référencement</p>-->
-            <!--            <p>Refonte graphique</p>-->
         </div>
-        <img src="/img/build.svg" alt="build" />
     </div>
     <div class="section">
         <div class="section__content">
@@ -34,13 +18,13 @@
                 Si vous n’avez qu’une simple idée ou bien une vision claire en tête, je saurai vous
                 guider tout au long du processus pour créer un site web moderne et impactant.
             </p>
-            <!--            <p>Voici les prestations généralement choisies par mes clients :</p>-->
         </div>
     </div>
 
+    <h3 class="carrousel-title background-primary">Mes prestations</h3>
     <div class="carousel">
         <NuxtLink to="/prestations" class="carousel__item">
-            <img src="/icon/web-development.png" alt="web" width="75" class="carousel__item_icon" />
+            <img src="/icon/feuille.png" alt="web" width="75" class="carousel__item_icon" />
             <h3 class="carousel__item__title">Site Vitrine</h3>
             <ul>
                 <li>Mettre en avant votre travail et vos services</li>
@@ -50,7 +34,7 @@
         </NuxtLink>
 
         <NuxtLink to="/prestations" class="carousel__item">
-            <img src="/icon/web-development.png" alt="web" width="75" class="carousel__item_icon" />
+            <img src="/icon/plante.png" alt="web" width="75" class="carousel__item_icon" />
             <h3 class="carousel__item__title">E-Shop</h3>
             <ul>
                 <li>Mise en place de la vente vos produits</li>
@@ -60,7 +44,7 @@
         </NuxtLink>
 
         <NuxtLink to="/prestations" class="carousel__item">
-            <img src="/icon/web-development.png" alt="web" width="75" class="carousel__item_icon" />
+            <img src="/icon/plante(1).png" alt="web" width="75" class="carousel__item_icon" />
             <h3 class="carousel__item__title">Gestion de société</h3>
             <ul>
                 <li>Optimisation des process de votre entreprise</li>
@@ -70,7 +54,7 @@
         </NuxtLink>
 
         <NuxtLink to="/prestations/content" class="carousel__item">
-            <img src="/icon/web-development.png" alt="web" width="75" class="carousel__item_icon" />
+            <img src="/icon/plante-araignee.png" alt="web" width="75" class="carousel__item_icon" />
             <h3 class="carousel__item__title">Optimisation SEO</h3>
             <ul>
                 <li>Mise en avant lors de recherche</li>
@@ -81,7 +65,7 @@
     </div>
 
     <div class="prestation-link">
-        <NuxtLink to="/prestations" class="hover-effect">
+        <NuxtLink to="/prestations" class="prestation-link__link hover-effect">
             Plus d'informations sur l'ensemble de mes prestations
             <nuxt-icon name="right-arrow"></nuxt-icon>
         </NuxtLink>
@@ -95,7 +79,7 @@
     </div>
 
     <div class="whoami">
-        <img src="/img/whoami.svg" alt="dev" width="550" class="img" />
+        <img src="/img/whoami.svg" alt="dev" />
         <div class="description">
             <h3 class="background-primary">A propos de moi</h3>
             <p>
@@ -119,34 +103,18 @@
         <h3><span class="background-primary">Ils me font confiance</span></h3>
         <div class="logo-list">
             <div title="Tout Doux" class="logo-list__item">Tout Doux</div>
-            <NuxtLink
-                to="https://cardiologs.com/"
-                target="_blank"
-                title="Cardiologs"
-                class="logo-list__item">
-                <img src="/img/logo/cardiologs.png" alt="cardiologs" width="100" />
-            </NuxtLink>
-            <NuxtLink
-                to="https://www.masasim.com/"
-                target="_blank"
-                title="Masa"
-                class="logo-list__item">
-                <img src="/img/logo/masa.webp" alt="masa" width="100" />
-            </NuxtLink>
-            <NuxtLink
-                to="https://messe-basse-production.com/"
-                target="_blank"
-                title="Messe Basse Production"
-                class="logo-list__item">
-                <img src="/img/logo/mbp.png" alt="mbp" width="100" />
-            </NuxtLink>
-            <NuxtLink
-                to="https://beercrackerz.org/"
-                target="_blank"
-                title="Beer Crackerz"
-                class="logo-list__item">
-                <img src="/img/logo/beercrackerz.svg" alt="beercrackerz" width="100" />
-            </NuxtLink>
+            <div title="Cardiologs" class="logo-list__item">
+                <img src="/img/logo/cardiologs.png" alt="cardiologs" />
+            </div>
+            <div title="Masa" class="logo-list__item">
+                <img src="/img/logo/masa.webp" alt="masa" />
+            </div>
+            <div title="Messe Basse Production" class="logo-list__item">
+                <img src="/img/logo/mbp.png" alt="mbp" />
+            </div>
+            <div title="Beer Crackerz" class="logo-list__item">
+                <img src="/img/logo/beercrackerz.svg" alt="beercrackerz" />
+            </div>
         </div>
     </div>
 
@@ -158,17 +126,21 @@
 
 <style scoped lang="scss">
 .jumbotron {
-    height: 40rem;
-    padding: 3rem 3rem;
+    //min-height: 40rem;
+    padding: 0 1rem 2rem;
     display: flex;
-    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+
+    img {
+        width: clamp(18rem, 50vw, 35.5rem);
+    }
 
     &__text {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        max-width: 40%;
 
         h2 {
             font-size: 2rem;
@@ -184,33 +156,66 @@
     }
 }
 
+@media (min-width: 768px) {
+    .jumbotron {
+        justify-content: space-evenly;
+        flex-direction: row-reverse;
+    }
+}
+
 .section {
-    padding: 5rem 10rem;
+    margin-bottom: 5rem;
+    padding: 0 1rem;
 
     &__content {
         background-color: var(--primary-100);
-        padding: 5rem;
+        padding: 2.5rem;
         border-radius: 3rem;
+        margin: auto;
 
         p {
-            width: 75%;
             margin: 0 auto 1rem;
-            font-size: 1.3rem;
+            font-size: 1rem;
             letter-spacing: 1px;
             line-height: 2rem;
         }
     }
 }
 
+@media (min-width: 768px) {
+    .section {
+        padding: 0 5rem;
+
+        &__content {
+            padding: 5rem;
+
+            p {
+                font-size: 1.3rem;
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .section {
+        padding: 0 10rem;
+    }
+}
+
+.carrousel-title {
+    font-size: 2rem;
+    margin-left: 1rem;
+}
+
 .carousel {
+    padding: 0 1rem;
+    margin-bottom: 1rem;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr;
     gap: 2rem;
-    padding: 0 5rem;
-    margin-bottom: 2rem;
 
     &__item {
-        padding: 2rem;
+        padding: 2rem 1rem;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -229,7 +234,7 @@
 
         ul {
             margin: 0;
-            align-self: flex-start;
+            padding-left: 1rem;
 
             li {
                 margin-bottom: 0.5rem;
@@ -239,13 +244,40 @@
 }
 
 .prestation-link {
-    padding-right: 3rem;
+    padding-right: 1rem;
     margin-bottom: 5rem;
     display: flex;
     justify-content: flex-end;
 
+    &__link {
+        max-width: 90%;
+        text-align: right;
+    }
+
     &:hover {
         color: var(--primary-900);
+    }
+}
+
+@media (min-width: 768px) {
+    .carrousel-title {
+        margin-left: 5rem;
+    }
+
+    .carousel {
+        padding: 0 5rem;
+        margin-bottom: 1.5rem;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .prestation-link {
+        padding-right: 5rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .carousel {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
@@ -282,14 +314,22 @@
 }
 
 .whoami {
+    padding: 2rem;
     display: flex;
-    padding: 5rem 5rem 5rem 10rem;
-    //justify-content: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     column-gap: 3rem;
+
+    img {
+        width: clamp(14.5rem, 50%, 25rem);
+        //min-width: 17.5rem;
+        //max-width: 25rem;
+        //width: 50%;
+    }
 
     .description {
         padding: 1rem;
-        max-width: 40%;
         display: flex;
         flex-direction: column;
 
@@ -313,6 +353,21 @@
     }
 }
 
+@media (min-width: 1200px) {
+    .whoami {
+        padding: 5rem;
+        flex-direction: row;
+
+        img {
+            width: clamp(14.5rem, 50%, 30rem);
+        }
+
+        .description {
+            max-width: 40%;
+        }
+    }
+}
+
 .trust-me {
     padding: 1rem;
     margin-bottom: 5rem;
@@ -324,34 +379,41 @@
 
     .logo-list {
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
-        align-items: center;
-        gap: 5rem;
+        gap: 3rem;
         padding: 1rem;
 
         &__item {
             font-size: 1.5rem;
-            height: 150px;
-            width: 150px;
             display: flex;
             justify-content: center;
             align-items: center;
+            width: 75px;
+            height: 75px;
 
-            &:hover img {
-                filter: grayscale(0);
+            img {
+                width: 75px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            &__item {
+                width: 100px;
+                height: 100px;
             }
 
             img {
-                filter: grayscale(50%);
-                transition: all 0.2s ease;
+                width: 100px;
             }
         }
     }
 }
 
 .contact {
-    width: 700px;
+    max-width: 700px;
     margin: 0 auto 5rem;
+    padding: 0 2rem;
 
     h3 {
         font-size: 2rem;
