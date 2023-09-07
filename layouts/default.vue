@@ -73,6 +73,13 @@
                         <img src="/icon/malt_bw.svg" alt="linkedin-logo" />
                     </NuxtLink>
                     <NuxtLink
+                        to="https://www.codeur.com/-raphaelbeekmann"
+                        target="_blank"
+                        class="social-networks__item"
+                        title="Codeur">
+                        <img src="/icon/codeur_bw.svg" alt="linkedin-logo" />
+                    </NuxtLink>
+                    <NuxtLink
                         to="https://www.instagram.com/raphael.beekmann/"
                         target="_blank"
                         class="social-networks__item"

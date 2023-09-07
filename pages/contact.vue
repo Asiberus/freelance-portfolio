@@ -64,6 +64,17 @@
                 </NuxtLink>
 
                 <NuxtLink
+                    to="https://www.codeur.com/-raphaelbeekmann"
+                    target="_blank"
+                    class="social-networks__link">
+                    <img
+                        src="/icon/codeur.svg"
+                        alt="codeur-logo"
+                        class="social-networks__link__logo" />
+                    <span class="social-networks__link__caption">Codeur</span>
+                </NuxtLink>
+
+                <NuxtLink
                     to="https://www.instagram.com/raphael.beekmann/"
                     target="_blank"
                     class="social-networks__link">
@@ -147,6 +158,7 @@ export default defineComponent({
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                gap: 0.25rem;
 
                 &:hover {
                     img {
