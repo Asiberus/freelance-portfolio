@@ -5,7 +5,7 @@
                 <h1>Raphael <span class="primary">BEEKMANN</span></h1>
             </NuxtLink>
 
-            <nav v-if="isLargeDevice" class="header__menu">
+            <nav class="header__menu hide-mobile">
                 <template v-for="link of LINKS" :key="link.to">
                     <NuxtLink :to="link.to" class="header__menu__link" active-class="active">
                         {{ link.name }}
@@ -13,7 +13,7 @@
                 </template>
                 <tile-link to="/contact" small>Demander un devis</tile-link>
             </nav>
-            <nav v-else>
+            <nav class="hide-desktop">
                 <nuxt-icon name="menu" class="header__icon"></nuxt-icon>
             </nav>
         </header>
@@ -87,29 +87,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onBeforeMount } from 'vue'
-
 const LINKS = [
     { name: 'Accueil', to: '/' },
     { name: 'Prestations', to: '/prestations' },
     { name: 'À propos', to: '/a-propos' },
 ]
-
-const isLargeDevice = ref(true)
-
-onBeforeMount(() => {
-    const mediaQuery = window.matchMedia('(min-width: 768px)')
-
-    updateIsLargeDevice(mediaQuery.matches)
-
-    mediaQuery.addEventListener('change', ({ matches }: MediaQueryListEvent) =>
-        updateIsLargeDevice(matches)
-    )
-})
-
-function updateIsLargeDevice(value: boolean): void {
-    isLargeDevice.value = value
-}
 
 function scrollToTheTop(): void {
     window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -126,13 +108,13 @@ function scrollToTheTop(): void {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem;
+    padding: 1rem;
 
     &__title {
         h1 {
             margin-bottom: 0;
             font-weight: 500;
-            font-size: clamp(1.25rem, 3vw, 3rem);
+            font-size: clamp(1.4rem, 3vw, 3rem);
             white-space: nowrap;
 
             .primary {
@@ -145,7 +127,7 @@ function scrollToTheTop(): void {
     &__menu {
         display: flex;
         align-items: center;
-        column-gap: clamp(0.5rem, 2vw, 2.5rem);
+        column-gap: clamp(0.5rem, 1.5vw, 2rem);
 
         &__link {
             transition: all 0.2s ease;
@@ -165,6 +147,12 @@ function scrollToTheTop(): void {
         font-size: clamp(1.5rem, 6vw, 2.5rem);
         color: var(--primary-800);
         cursor: pointer;
+    }
+}
+
+@media (min-width: 768px) {
+    .header {
+        padding: 1.5rem;
     }
 }
 

@@ -13,13 +13,12 @@
         En tant que propriétaire du site, vous aurez un accès total à la gestion des utilisateurs.
         Si votre site est domicilié en Europe, il est également obligatoire de respecter les règles
         du RGPD (Règlement Général sur la Protection des Données). Ces règles encadrent la gestion
-        et la conservation des données utilisateurs (
-        <a
+        et la conservation des données utilisateurs (<a
             href="https://www.economie.gouv.fr/entreprises/reglement-general-protection-donnees-rgpd"
-            target="_blank">
-            plus d’information
-        </a>
-        ).
+            target="_blank"
+            class="text-primary hover-effect"
+            >plus d’information</a
+        >).
     </reference-item>
     <reference-item title="Gestion de contenu" reference="FCT-002">
         Un CMS (Content Management System) permet la création, la modification et la suppression du

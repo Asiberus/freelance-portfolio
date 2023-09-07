@@ -22,7 +22,7 @@
                 </p>
             </div>
         </div>
-        <div class="section">
+        <div class="section column-reverse">
             <div>
                 <h2 class="background-primary">Mes valeurs</h2>
                 <p>
@@ -86,25 +86,56 @@
 
 <style scoped lang="scss">
 .wrapper {
-    padding: 5rem;
+    padding: 1rem 1rem 2rem;
 
     .section {
         display: flex;
+        flex-direction: column;
         align-items: center;
-        column-gap: 2rem;
+        gap: 2rem;
         margin-bottom: 2rem;
 
+        &.column-reverse {
+            flex-direction: column-reverse;
+        }
+
         img {
-            max-width: 300px;
+            max-width: 18rem;
         }
 
         h2 {
-            font-size: 2.5rem;
+            font-size: 1.5rem;
             margin-bottom: 1rem;
         }
 
         p {
             margin-bottom: 0.5rem;
+            text-align: justify;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .wrapper {
+        padding: 3rem;
+
+        .section {
+            flex-direction: row !important;
+            align-items: start;
+
+            h2 {
+                font-size: 2rem;
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .wrapper {
+        padding: 5rem 10rem;
+
+        .section h2 {
+            font-size: 2.5rem;
         }
     }
 }

@@ -23,7 +23,8 @@ h3,
 h4,
 h5,
 h6,
-p {
+p,
+ul {
     margin-top: 0;
 }
 
@@ -117,4 +118,16 @@ hr {
 
 .nuxt-icon svg {
     margin-bottom: 0 !important;
+}
+
+.hide-mobile {
+    @media (max-width: 767px) {
+        display: none !important;
+    }
+}
+
+.hide-desktop {
+    @media (min-width: 768px) {
+        display: none !important;
+    }
 }

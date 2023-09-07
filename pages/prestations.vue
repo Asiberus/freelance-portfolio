@@ -57,11 +57,11 @@
 
 <style scoped lang="scss">
 .reference {
-    padding: 5rem;
+    padding: 1rem 1rem 2rem;
 
     &__title {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
     }
 
     &__description {
@@ -73,9 +73,9 @@
     }
 
     &__menu {
-        display: grid;
+        display: flex;
         gap: 0.5rem;
-        grid-template-columns: repeat(6, 1fr);
+        flex-wrap: wrap;
         margin-bottom: 1rem;
 
         &__item {
@@ -92,6 +92,27 @@
             &.active {
                 background-color: var(--primary-400);
             }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .reference {
+        padding: 3rem;
+
+        &__title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .reference {
+        padding: 5rem 10rem;
+
+        &__title {
+            font-size: 2.5rem;
         }
     }
 }

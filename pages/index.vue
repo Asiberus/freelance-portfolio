@@ -37,7 +37,7 @@
             <img src="/icon/plante.png" alt="web" width="75" class="carousel__item_icon" />
             <h3 class="carousel__item__title">E-Shop</h3>
             <ul>
-                <li>Mise en place de la vente vos produits</li>
+                <li>Permet la vente vos produits</li>
                 <li>Suivi et fidélisation de votre clientèle</li>
                 <li>Système intégré de paiement</li>
             </ul>
@@ -126,7 +126,6 @@
 
 <style scoped lang="scss">
 .jumbotron {
-    //min-height: 40rem;
     padding: 0 1rem 2rem;
     display: flex;
     align-items: center;
@@ -203,7 +202,7 @@
 }
 
 .carrousel-title {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-left: 1rem;
 }
 
@@ -261,6 +260,7 @@
 
 @media (min-width: 768px) {
     .carrousel-title {
+        font-size: 2rem;
         margin-left: 5rem;
     }
 
@@ -323,9 +323,6 @@
 
     img {
         width: clamp(14.5rem, 50%, 25rem);
-        //min-width: 17.5rem;
-        //max-width: 25rem;
-        //width: 50%;
     }
 
     .description {
@@ -334,17 +331,16 @@
         flex-direction: column;
 
         h3 {
-            font-size: 2rem;
+            font-size: 1.5rem;
         }
 
         p {
             text-align: justify;
-            letter-spacing: 1px;
-            line-height: 2rem;
         }
 
         &__link {
             align-self: flex-end;
+            white-space: nowrap;
 
             &:hover {
                 color: var(--primary-900);
@@ -357,6 +353,10 @@
     .whoami {
         padding: 5rem;
         flex-direction: row;
+
+        h3 {
+            font-size: 2rem;
+        }
 
         img {
             width: clamp(14.5rem, 50%, 30rem);
@@ -373,7 +373,7 @@
     margin-bottom: 5rem;
 
     h3 {
-        font-size: 2rem;
+        font-size: 1.5rem;
         text-align: center;
     }
 
@@ -396,16 +396,33 @@
                 width: 75px;
             }
         }
+    }
+}
 
-        @media (min-width: 768px) {
-            &__item {
-                width: 100px;
-                height: 100px;
-            }
+@media (min-width: 768px) {
+    .trust-me {
+        h3 {
+            font-size: 2rem;
+        }
+
+        .logo-list__item {
+            width: 100px;
+            height: 100px;
 
             img {
                 width: 100px;
             }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .trust-me.logo-list__item {
+        width: 150px;
+        height: 150px;
+
+        img {
+            width: 100px;
         }
     }
 }
@@ -416,8 +433,14 @@
     padding: 0 2rem;
 
     h3 {
-        font-size: 2rem;
+        font-size: 1.5rem;
         margin-bottom: 1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .contact h3 {
+        font-size: 2rem;
     }
 }
 </style>

@@ -105,7 +105,7 @@ form {
         }
 
         textarea {
-            min-height: 150px; // TODO: maybe change for different screen size
+            min-height: 200px;
             resize: vertical;
         }
     }
