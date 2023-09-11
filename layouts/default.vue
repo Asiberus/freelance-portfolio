@@ -19,7 +19,7 @@
                 <button class="nav-menu-btn" @click="openMenu()">
                     <nuxt-icon name="menu" class="nav-menu-btn__icon"></nuxt-icon>
                 </button>
-                <div v-show="menuOpened" class="nav-menu">
+                <div ref="menu" class="nav-menu">
                     <div class="nav-menu__header">
                         <h1>Raphael <span class="anti-primary">BEEKMANN</span></h1>
                         <button class="nav-menu__header__btn" @click="closeMenu()">
@@ -134,16 +134,48 @@ const LINKS = [
     { name: 'À propos', to: '/a-propos' },
 ]
 
-const menuOpened = ref(false)
+const linksAnimationSteps = [
+    { opacity: 0, transform: 'translateY(-15px)' },
+    { opacity: 1, transform: 'translateY(0)' },
+]
+const linksAnimationOptions = {
+    duration: 250,
+    easing: 'ease-out',
+    fill: 'forwards',
+}
+
+const menu = ref(null)
 
 function openMenu(): void {
-    menuOpened.value = true
+    menu.value.style.setProperty('display', 'block')
+    menu.value.classList.add('mask-circle-in')
     document.documentElement.classList.add('hide-scroll')
+    Array.from(menu.value.getElementsByTagName('li')).forEach((link, index) => {
+        link.animate(linksAnimationSteps, { ...linksAnimationOptions, delay: (index + 1) * 75 })
+    })
+
+    setTimeout(() => menu.value.classList.remove('mask-circle-in'), 300)
 }
 
 function closeMenu(): void {
-    menuOpened.value = false
-    document.documentElement.classList.remove('hide-scroll')
+    menu.value.classList.add('mask-circle-out')
+
+    Array.from(menu.value.getElementsByTagName('li'))
+        .reverse()
+        .forEach((link, index) => {
+            link.animate(linksAnimationSteps, {
+                ...linksAnimationOptions,
+                delay: index * 75,
+                direction: 'reverse',
+                duration: 100,
+            })
+        })
+
+    setTimeout(() => {
+        menu.value.classList.remove('mask-circle-out')
+        menu.value.style.setProperty('display', 'none')
+        document.documentElement.classList.remove('hide-scroll')
+    }, 300)
 }
 
 function scrollToTheTop(): void {
@@ -212,7 +244,18 @@ function scrollToTheTop(): void {
     }
 }
 
+@keyframes maskCircleIn {
+    from {
+        clip-path: circle(0 at var(--mask-right) var(--mask-top));
+    }
+
+    to {
+        clip-path: circle(200vh at var(--mask-right) var(--mask-top));
+    }
+}
+
 .nav-menu {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -220,6 +263,18 @@ function scrollToTheTop(): void {
     height: 100vh;
     z-index: 100;
     background-color: var(--primary-800);
+    overflow: auto;
+
+    --mask-right: calc(100vw - 1rem - var(--btn-size) / 2);
+    --mask-top: 2.1rem;
+
+    &.mask-circle-in {
+        animation: 0.3s ease-in forwards maskCircleIn;
+    }
+
+    &.mask-circle-out {
+        animation: 0.3s ease-out reverse forwards maskCircleIn;
+    }
 
     &__header {
         display: flex;
@@ -230,13 +285,13 @@ function scrollToTheTop(): void {
             margin-bottom: 0;
             padding: 1rem;
             font-size: var(--title-size);
-            color: var(--anti-primary-100);
+            color: var(--anti-primary-25);
             font-weight: 500;
             white-space: nowrap;
 
             .anti-primary {
                 font-weight: 800;
-                color: var(--anti-primary-700);
+                color: var(--anti-primary-500);
             }
         }
 
@@ -247,7 +302,11 @@ function scrollToTheTop(): void {
 
             &__icon {
                 font-size: var(--btn-size);
-                color: var(--anti-primary-700);
+                color: var(--anti-primary-25);
+
+                &:hover {
+                    color: var(--anti-primary-100);
+                }
             }
         }
     }
@@ -261,18 +320,19 @@ function scrollToTheTop(): void {
             margin: 0;
 
             li {
+                opacity: 0;
+
                 .nav-menu__link {
                     display: block;
                     width: 100%;
                     height: 100%;
                     padding: 1.5rem;
                     font-size: 1.5rem;
-                    color: var(--anti-primary-100);
+                    color: var(--anti-primary-25);
                     text-align: center;
 
-                    &.active,
                     &:hover {
-                        color: var(--anti-primary-500);
+                        color: var(--anti-primary-100);
                     }
                 }
 
@@ -281,19 +341,18 @@ function scrollToTheTop(): void {
                     margin: 1rem auto;
                     width: 100%;
                     text-align: center;
-                    //font-size: 1.5rem;
                     font-size: clamp(1rem, 5vw, 1.5rem);
-                    background-color: var(--anti-primary-400);
+                    background-color: var(--anti-primary-25);
                     color: var(--primary-800);
 
                     &:hover {
-                        background-color: var(--anti-primary-500);
+                        background-color: var(--anti-primary-100);
                     }
                 }
 
                 hr {
                     margin: 0;
-                    border-color: var(--anti-primary-500);
+                    border-color: var(--anti-primary-25);
                 }
             }
         }
@@ -346,17 +405,14 @@ footer {
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            //flex-wrap: wrap;
             column-gap: 1.5rem;
             margin-bottom: 1rem;
 
             h3,
             span {
-                //font-size: 1.75rem;
                 font-size: clamp(1.5rem, 5vw, 1.75rem);
                 color: white;
                 margin: 0;
-                //white-space: nowrap;
                 text-align: center;
             }
 
@@ -397,13 +453,9 @@ footer {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                background-color: var(--primary-200);
+                background-color: var(--primary-25);
                 cursor: pointer;
                 transition: all 0.2s ease;
-
-                &:hover {
-                    background-color: var(--primary-25);
-                }
 
                 img {
                     max-width: 20px;
