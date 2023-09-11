@@ -9,6 +9,9 @@
 a {
     all: unset;
     cursor: pointer;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+    line-height: 2rem;
 }
 
 body {
@@ -130,4 +133,8 @@ hr {
     @media (min-width: 768px) {
         display: none !important;
     }
+}
+
+.hide-scroll {
+    overflow-y: hidden !important;
 }

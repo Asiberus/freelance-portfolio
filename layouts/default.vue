@@ -1,9 +1,11 @@
 <template>
     <div class="wrapper">
         <header class="header">
-            <NuxtLink to="/" class="header__title">
-                <h1>Raphael <span class="primary">BEEKMANN</span></h1>
-            </NuxtLink>
+            <div class="header__title">
+                <NuxtLink to="/">
+                    <h1>Raphael <span class="primary">BEEKMANN</span></h1>
+                </NuxtLink>
+            </div>
 
             <nav class="header__menu hide-mobile">
                 <template v-for="link of LINKS" :key="link.to">
@@ -14,7 +16,39 @@
                 <tile-link to="/contact" small>Demander un devis</tile-link>
             </nav>
             <nav class="hide-desktop">
-                <nuxt-icon name="menu" class="header__icon"></nuxt-icon>
+                <button class="nav-menu-btn" @click="openMenu()">
+                    <nuxt-icon name="menu" class="nav-menu-btn__icon"></nuxt-icon>
+                </button>
+                <div v-show="menuOpened" class="nav-menu">
+                    <div class="nav-menu__header">
+                        <h1>Raphael <span class="anti-primary">BEEKMANN</span></h1>
+                        <button class="nav-menu__header__btn" @click="closeMenu()">
+                            <nuxt-icon name="close" class="nav-menu__header__btn__icon"></nuxt-icon>
+                        </button>
+                    </div>
+                    <nav>
+                        <ul>
+                            <li v-for="link of LINKS" :key="link.to">
+                                <NuxtLink
+                                    :to="link.to"
+                                    class="nav-menu__link"
+                                    active-class="active"
+                                    @click="closeMenu()">
+                                    {{ link.name }}
+                                </NuxtLink>
+                                <hr />
+                            </li>
+                            <li>
+                                <tile-link
+                                    to="/contact"
+                                    class="nav-menu__tile-link"
+                                    @click="closeMenu()"
+                                    >Demander un devis</tile-link
+                                >
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
             </nav>
         </header>
 
@@ -100,6 +134,18 @@ const LINKS = [
     { name: 'À propos', to: '/a-propos' },
 ]
 
+const menuOpened = ref(false)
+
+function openMenu(): void {
+    menuOpened.value = true
+    document.documentElement.classList.add('hide-scroll')
+}
+
+function closeMenu(): void {
+    menuOpened.value = false
+    document.documentElement.classList.remove('hide-scroll')
+}
+
 function scrollToTheTop(): void {
     window.scrollTo({ top: 0, behavior: 'smooth' })
 }
@@ -115,13 +161,17 @@ function scrollToTheTop(): void {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+
+    --title-size: clamp(1.4rem, 3vw, 3rem);
+    --btn-size: clamp(1.5rem, 6vw, 2.5rem);
 
     &__title {
+        padding: 1rem;
+
         h1 {
             margin-bottom: 0;
             font-weight: 500;
-            font-size: clamp(1.4rem, 3vw, 3rem);
+            font-size: var(--title-size);
             white-space: nowrap;
 
             .primary {
@@ -150,16 +200,113 @@ function scrollToTheTop(): void {
         }
     }
 
-    &__icon {
-        font-size: clamp(1.5rem, 6vw, 2.5rem);
-        color: var(--primary-800);
+    .nav-menu-btn {
+        all: unset;
+        padding: 1rem;
         cursor: pointer;
+
+        &__icon {
+            font-size: var(--btn-size);
+            color: var(--primary-800);
+        }
+    }
+}
+
+.nav-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+    background-color: var(--primary-800);
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h1 {
+            margin-bottom: 0;
+            padding: 1rem;
+            font-size: var(--title-size);
+            color: var(--anti-primary-100);
+            font-weight: 500;
+            white-space: nowrap;
+
+            .anti-primary {
+                font-weight: 800;
+                color: var(--anti-primary-700);
+            }
+        }
+
+        &__btn {
+            all: unset;
+            padding: 1rem;
+            cursor: pointer;
+
+            &__icon {
+                font-size: var(--btn-size);
+                color: var(--anti-primary-700);
+            }
+        }
+    }
+
+    nav {
+        padding: 3rem;
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                .nav-menu__link {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    padding: 1.5rem;
+                    font-size: 1.5rem;
+                    color: var(--anti-primary-100);
+                    text-align: center;
+
+                    &.active,
+                    &:hover {
+                        color: var(--anti-primary-500);
+                    }
+                }
+
+                .nav-menu__tile-link {
+                    display: block;
+                    margin: 1rem auto;
+                    width: 100%;
+                    text-align: center;
+                    //font-size: 1.5rem;
+                    font-size: clamp(1rem, 5vw, 1.5rem);
+                    background-color: var(--anti-primary-400);
+                    color: var(--primary-800);
+
+                    &:hover {
+                        background-color: var(--anti-primary-500);
+                    }
+                }
+
+                hr {
+                    margin: 0;
+                    border-color: var(--anti-primary-500);
+                }
+            }
+        }
     }
 }
 
 @media (min-width: 768px) {
     .header {
         padding: 1.5rem;
+
+        &__title {
+            padding: 0;
+        }
     }
 }
 

@@ -18,7 +18,7 @@ const props = defineProps({
 
 <style scoped lang="scss">
 .tile-link {
-    padding: 1rem 1rem;
+    padding: 1rem;
     font-size: 1.2rem;
     background-color: var(--primary-600);
     border-radius: 5rem;

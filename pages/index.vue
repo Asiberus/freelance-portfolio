@@ -354,16 +354,16 @@
         padding: 5rem;
         flex-direction: row;
 
-        h3 {
-            font-size: 2rem;
-        }
-
         img {
             width: clamp(14.5rem, 50%, 30rem);
         }
 
         .description {
             max-width: 40%;
+
+            h3 {
+                font-size: 2rem;
+            }
         }
     }
 }
