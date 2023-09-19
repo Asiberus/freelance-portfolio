@@ -23,49 +23,65 @@
 
     <h3 class="carrousel-title background-primary">Mes prestations</h3>
     <div class="carousel">
-        <NuxtLink to="/prestations" class="carousel__item">
+        <div to="/prestations" class="carousel__item">
             <img src="/icon/feuille.png" alt="web" width="75" class="carousel__item_icon" />
-            <h3 class="carousel__item__title">Site Vitrine</h3>
+            <h3 class="carousel__item__title background-primary background-sm">Site Vitrine</h3>
             <ul>
                 <li>Mettre en avant votre travail et vos services</li>
                 <li>Convaincre vos prospects de travailler avec vous</li>
                 <li>Décrire vos valeurs et votre identité visuelle</li>
             </ul>
-        </NuxtLink>
+            <NuxtLink to="/prestations" class="carousel__item__link hover-effect text-primary"
+                >En savoir plus</NuxtLink
+            >
+        </div>
 
-        <NuxtLink to="/prestations" class="carousel__item">
+        <div to="/prestations" class="carousel__item">
             <img src="/icon/plante.png" alt="web" width="75" class="carousel__item_icon" />
-            <h3 class="carousel__item__title">E-Shop</h3>
+            <h3 class="carousel__item__title background-primary background-sm">E-Shop</h3>
             <ul>
                 <li>Permet la vente vos produits</li>
                 <li>Suivi et fidélisation de votre clientèle</li>
                 <li>Système intégré de paiement</li>
             </ul>
-        </NuxtLink>
+            <NuxtLink to="/prestations" class="carousel__item__link hover-effect text-primary"
+                >En savoir plus</NuxtLink
+            >
+        </div>
 
-        <NuxtLink to="/prestations" class="carousel__item">
+        <div to="/prestations" class="carousel__item">
             <img src="/icon/plante(1).png" alt="web" width="75" class="carousel__item_icon" />
-            <h3 class="carousel__item__title">Gestion de société</h3>
+            <h3 class="carousel__item__title background-primary background-sm">
+                Gestion de société
+            </h3>
             <ul>
                 <li>Optimisation des process de votre entreprise</li>
                 <li>Tableau de bord pour mesurer l’évolution de votre performance</li>
                 <li>Archivage et sauvegarde de vos données</li>
             </ul>
-        </NuxtLink>
+            <NuxtLink to="/prestations" class="carousel__item__link hover-effect text-primary"
+                >En savoir plus</NuxtLink
+            >
+        </div>
 
-        <NuxtLink to="/prestations/content" class="carousel__item">
+        <div to="/prestations/content" class="carousel__item">
             <img src="/icon/plante-araignee.png" alt="web" width="75" class="carousel__item_icon" />
-            <h3 class="carousel__item__title">Optimisation SEO</h3>
+            <h3 class="carousel__item__title background-primary background-sm">Optimisation SEO</h3>
             <ul>
-                <li>Mise en avant lors de recherche</li>
-                <li>Positionnement sur des mots clés</li>
+                <li>Optimisation pour les moteurs de recherche (SEO)</li>
                 <li>Boost des visites de votre site</li>
+                <li>Référencement sur vos mots clés</li>
             </ul>
-        </NuxtLink>
+            <NuxtLink
+                to="/prestations/content"
+                class="carousel__item__link hover-effect text-primary"
+                >En savoir plus</NuxtLink
+            >
+        </div>
     </div>
 
     <div class="prestation-link">
-        <NuxtLink to="/prestations" class="prestation-link__link hover-effect">
+        <NuxtLink to="/prestations" class="prestation-link__link hover-effect text-primary">
             Plus d'informations sur l'ensemble de mes prestations
             <nuxt-icon name="right-arrow"></nuxt-icon>
         </NuxtLink>
@@ -102,7 +118,9 @@
     <div class="trust-me">
         <h3><span class="background-primary">Ils me font confiance</span></h3>
         <div class="logo-list">
-            <div title="Tout Doux" class="logo-list__item">Tout Doux</div>
+            <div title="Tout Doux" class="logo-list__item">
+                <img src="/img/logo/tout_doux.png" alt="Tout Doux" />
+            </div>
             <div title="Cardiologs" class="logo-list__item">
                 <img src="/img/logo/cardiologs.png" alt="cardiologs" />
             </div>
@@ -113,7 +131,7 @@
                 <img src="/img/logo/mbp.png" alt="mbp" />
             </div>
             <div title="Beer Crackerz" class="logo-list__item">
-                <img src="/img/logo/beercrackerz.svg" alt="beercrackerz" />
+                <img src="/img/logo/beercrackerz.png" alt="beercrackerz" />
             </div>
         </div>
     </div>
@@ -132,7 +150,7 @@
     flex-direction: column;
 
     img {
-        width: clamp(18rem, 50vw, 35.5rem);
+        width: clamp(16rem, 50vw, 32.5rem);
     }
 
     &__text {
@@ -144,6 +162,7 @@
         h2 {
             font-size: 2rem;
             text-align: center;
+            line-height: 2rem;
         }
 
         p {
@@ -151,6 +170,7 @@
             margin-bottom: 1.5rem;
             margin-top: 0;
             font-size: 1.3rem;
+            line-height: 2rem;
         }
     }
 }
@@ -167,7 +187,7 @@
     padding: 0 1rem;
 
     &__content {
-        background-color: var(--primary-100);
+        background-color: var(--primary-300);
         padding: 2.5rem;
         border-radius: 3rem;
         margin: auto;
@@ -214,7 +234,7 @@
     gap: 2rem;
 
     &__item {
-        padding: 2rem 1rem;
+        padding: 2rem 1rem 0.75rem;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -223,10 +243,6 @@
         border-radius: 1.5rem;
         transition: all 0.2s ease;
 
-        &:hover {
-            background-color: var(--primary-100);
-        }
-
         &__title {
             margin: 0;
         }
@@ -234,10 +250,16 @@
         ul {
             margin: 0;
             padding-left: 1rem;
+            flex-grow: 1;
 
             li {
-                margin-bottom: 0.5rem;
+                margin-bottom: 0.75rem;
+                line-height: 1.5rem;
             }
+        }
+
+        &__link {
+            align-self: flex-end;
         }
     }
 }
@@ -251,10 +273,6 @@
     &__link {
         max-width: 90%;
         text-align: right;
-    }
-
-    &:hover {
-        color: var(--primary-900);
     }
 }
 
@@ -288,8 +306,8 @@
 
     &__content {
         position: relative;
-        width: fit-content;
         margin: 0 auto;
+        line-height: 1.75rem;
         font-size: 1.4rem;
         font-style: italic;
         font-weight: normal;
@@ -310,6 +328,12 @@
             font-size: 3rem;
             transform: rotate(180deg);
         }
+    }
+}
+
+@media (min-width: 1200px) {
+    .objectif {
+        padding: 5rem 10rem;
     }
 }
 
@@ -371,10 +395,13 @@
 .trust-me {
     padding: 1rem;
     margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     h3 {
         font-size: 1.5rem;
-        text-align: center;
     }
 
     .logo-list {

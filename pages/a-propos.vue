@@ -105,11 +105,11 @@
 
         h2 {
             font-size: 1.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.25rem;
         }
 
         p {
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
             text-align: justify;
         }
     }

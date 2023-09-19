@@ -198,7 +198,7 @@ function scrollToTheTop(): void {
     --btn-size: clamp(1.5rem, 6vw, 2.5rem);
 
     &__title {
-        padding: 1rem;
+        padding: 1rem 0.75rem 1rem 1rem;
 
         h1 {
             margin-bottom: 0;
@@ -283,7 +283,7 @@ function scrollToTheTop(): void {
 
         h1 {
             margin-bottom: 0;
-            padding: 1rem;
+            padding: 1rem 0.75rem 1rem 1rem;
             font-size: var(--title-size);
             color: var(--anti-primary-25);
             font-weight: 500;
