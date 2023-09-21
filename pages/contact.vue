@@ -1,15 +1,16 @@
 <template>
     <div class="wrapper">
         <div class="form">
-            <h2 class="title">Demandez un devis!</h2>
+            <img src="/img/home.svg" alt="home" class="form__img hide-desktop" />
+            <h2 class="background-primary">Demandez un devis!</h2>
             <p>
                 Si vous avez un projet de site vitrine, un e-shop, un site de gestion de société ou
-                tout autre projet, vous pouvez me contacter grace au formulaire ci dessous ou bien
-                avec mes coordonnées ci contre. <br />
-                N’hésitez pas à :
+                tout autre projet, vous pouvez me contacter soit grâce au formulaire soit à l'aide
+                de mes coordonnées ci-<span class="hide-mobile">contre</span
+                ><span class="hide-desktop">dessous</span>. <br />
             </p>
-            <p></p>
-            <ul>
+            <p class="hide-mobile">N’hésitez pas à :</p>
+            <ul class="hide-mobile">
                 <li>Détailler le plus possible votre projet</li>
                 <li>
                     Inclure les
@@ -20,24 +21,28 @@
                 </li>
                 <li>Indiquer un numéro de téléphone pour que je puisse vous recontacter</li>
             </ul>
-            <ContactForm></ContactForm>
+
+            <ContactForm class="mt-1"></ContactForm>
         </div>
         <div class="contact">
-            <img src="/img/home.svg" alt="home" class="contact__img" />
-
-            <h2 class="title">Contact</h2>
-            <p>
-                <nuxt-icon name="email2" class="contact__icon" filled></nuxt-icon>
+            <img src="/img/home.svg" alt="home" class="contact__img hide-mobile" />
+            <h2 class="background-primary">Contact</h2>
+            <div class="contact__item">
+                <nuxt-icon name="email" class="contact__item__icon" filled></nuxt-icon>
                 <span>:</span>
-                contact@raphaelbeekmann.com
-            </p>
-            <p>
-                <nuxt-icon name="phone" class="contact__icon" filled></nuxt-icon>
+                <NuxtLink to="mailto:contact@raphaelbeekmann.com" class="text-primary hover-effect">
+                    contact@raphaelbeekmann.com
+                </NuxtLink>
+            </div>
+            <div class="contact__item">
+                <nuxt-icon name="phone" class="contact__item__icon" filled></nuxt-icon>
                 <span>:</span>
-                +33 6 25 65 22 72
-            </p>
+                <NuxtLink to="tel:+33 6 25 65 22 72" class="text-primary hover-effect"
+                    >+33 6 25 65 22 72</NuxtLink
+                >
+            </div>
 
-            <h2 class="title mt-1">Mes réseaux</h2>
+            <h2 class="background-primary mt-2">Mes réseaux</h2>
             <div class="social-networks">
                 <NuxtLink
                     to="https://www.linkedin.com/in/raphael-beekmann-9379b9134/"
@@ -56,6 +61,17 @@
                     class="social-networks__link">
                     <img src="/icon/malt.svg" alt="malt-logo" class="social-networks__link__logo" />
                     <span class="social-networks__link__caption">Malt</span>
+                </NuxtLink>
+
+                <NuxtLink
+                    to="https://www.codeur.com/-raphaelbeekmann"
+                    target="_blank"
+                    class="social-networks__link">
+                    <img
+                        src="/icon/codeur.svg"
+                        alt="codeur-logo"
+                        class="social-networks__link__logo" />
+                    <span class="social-networks__link__caption">Codeur</span>
                 </NuxtLink>
 
                 <NuxtLink
@@ -84,64 +100,65 @@ export default defineComponent({
 
 <style scoped lang="scss">
 .wrapper {
-    margin: 3rem 5rem;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 5rem;
+    padding: 1rem 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+
+    & > * {
+        flex: 1 1 0;
+    }
 
     h2 {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        line-height: 2rem;
+        margin-bottom: 0.5rem;
     }
 
     .form {
+        &__img {
+            display: block;
+            width: clamp(13rem, 50%, 18rem);
+            margin: 0 auto 1.5rem;
+        }
+
         p {
             margin-bottom: 0;
-        }
-
-        ul {
-            margin: 0 0 1rem;
-        }
-
-        .nuxt-icon {
-            font-size: 1.25rem;
         }
     }
 
     .contact {
-        display: flex;
-        flex-direction: column;
-
         &__img {
-            align-self: center;
-            max-width: 40%;
-            margin-bottom: 1rem;
+            width: clamp(13rem, 20vw, 21rem);
+            display: block;
+            margin: auto auto 1rem;
         }
 
-        .title {
-            margin-bottom: 2rem;
-        }
-
-        & > p {
+        &__item {
+            width: fit-content;
             display: flex;
             column-gap: 0.5rem;
-            margin-bottom: 1rem;
-            padding-left: 1rem;
-        }
+            margin-bottom: 0.5rem;
+            padding-left: 0.5rem;
+            font-size: 0.9rem;
 
-        &__icon {
-            font-size: 1.75rem;
+            &__icon {
+                font-size: 1.25rem;
+            }
         }
 
         .social-networks {
             display: flex;
-            gap: 2rem;
-            padding-left: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding-left: 0.5rem;
+            margin-bottom: 2rem;
 
             &__link {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                gap: 0.25rem;
 
                 &:hover {
                     img {
@@ -154,19 +171,79 @@ export default defineComponent({
                 }
 
                 img {
-                    max-width: 75px;
+                    max-width: 50px;
                     filter: grayscale(25%);
                     transition: all 0.2s ease;
                 }
 
                 span {
                     color: #777;
-                    font-size: 0.9rem;
+                    font-size: 0.75rem;
                     line-height: 1.25rem;
                     transition: all 0.2s ease;
                 }
             }
         }
+    }
+}
+
+@media (min-width: 768px) {
+    .wrapper {
+        flex-direction: row;
+        column-gap: 2rem;
+        padding: 3rem;
+
+        h2 {
+            font-size: 2.5rem;
+            line-height: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .form {
+            ul {
+                padding-left: 1rem;
+                margin: 0 0 1rem;
+
+                li {
+                    line-height: 2rem;
+                }
+            }
+        }
+
+        .contact {
+            &__item {
+                margin-bottom: 0.5rem;
+                padding-left: 1rem;
+                font-size: 1rem;
+
+                &__icon {
+                    font-size: 1.5rem;
+                }
+            }
+
+            .social-networks {
+                padding-left: 1rem;
+                gap: 2rem;
+
+                img {
+                    max-width: 75px;
+                }
+
+                span {
+                    font-size: 0.9rem;
+                }
+
+                &__link {
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .wrapper {
+        padding: 5rem 10rem;
+        column-gap: 5rem;
     }
 }
 </style>

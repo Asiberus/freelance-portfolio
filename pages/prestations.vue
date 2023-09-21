@@ -3,12 +3,12 @@
         <h2 class="reference__title background-primary">Prestations</h2>
         <div class="reference__description">
             <p>
-                Vous trouverez ici une liste des prestations que propose. Celle-ci sont réparties en
-                6 principales catégories (Pack, Gestion de projet, Design, Contenu, Fonctionnalité,
-                Support).
+                Vous trouverez ici une liste des prestations que propose. Celles-ci sont réparties
+                en 6 principales catégories (Pack, Gestion de projet, Design, Contenu,
+                Fonctionnalité et Support).
             </p>
             <p>
-                Si votre besoin ne se trouve pas dans liste ci dessous, n’hésitez pas à m’écrire
+                Si votre besoin ne se trouve pas dans la liste ci-dessous, n’hésitez pas à m’écrire
                 (<NuxtLink to="/contact" class="text-primary hover-effect">contact</NuxtLink>). Nous
                 pourrons ensuite discuter de la réalisation de votre demande.
             </p>
@@ -57,11 +57,11 @@
 
 <style scoped lang="scss">
 .reference {
-    padding: 5rem;
+    padding: 1rem 1rem 2rem;
 
     &__title {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
     }
 
     &__description {
@@ -73,9 +73,9 @@
     }
 
     &__menu {
-        display: grid;
+        display: flex;
         gap: 0.5rem;
-        grid-template-columns: repeat(6, 1fr);
+        flex-wrap: wrap;
         margin-bottom: 1rem;
 
         &__item {
@@ -85,10 +85,34 @@
             transition: all 0.2s ease;
             border-radius: 0.3rem;
 
-            &:hover,
-            &.active {
-                background-color: #d5d5d5;
+            &:hover {
+                background-color: var(--primary-300);
             }
+
+            &.active {
+                background-color: var(--primary-400);
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .reference {
+        padding: 3rem;
+
+        &__title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .reference {
+        padding: 5rem 10rem;
+
+        &__title {
+            font-size: 2.5rem;
         }
     }
 }
