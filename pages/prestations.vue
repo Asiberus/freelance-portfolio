@@ -3,12 +3,12 @@
         <h2 class="reference__title background-primary">Prestations</h2>
         <div class="reference__description">
             <p>
-                Vous trouverez ici une liste des prestations que propose. Celle-ci sont réparties en
-                6 principales catégories (Pack, Gestion de projet, Design, Contenu, Fonctionnalité,
-                Support).
+                Vous trouverez ici une liste des prestations que propose. Celles-ci sont réparties
+                en 6 principales catégories (Pack, Gestion de projet, Design, Contenu,
+                Fonctionnalité et Support).
             </p>
             <p>
-                Si votre besoin ne se trouve pas dans liste ci dessous, n’hésitez pas à m’écrire
+                Si votre besoin ne se trouve pas dans la liste ci-dessous, n’hésitez pas à m’écrire
                 (<NuxtLink to="/contact" class="text-primary hover-effect">contact</NuxtLink>). Nous
                 pourrons ensuite discuter de la réalisation de votre demande.
             </p>

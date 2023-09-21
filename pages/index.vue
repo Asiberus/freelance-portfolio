@@ -40,7 +40,7 @@
             <img src="/icon/plante.png" alt="web" width="75" class="carousel__item_icon" />
             <h3 class="carousel__item__title background-primary background-sm">E-Shop</h3>
             <ul>
-                <li>Permet la vente vos produits</li>
+                <li>Permet l'exposition et la vente de vos produits</li>
                 <li>Suivi et fidélisation de votre clientèle</li>
                 <li>Système intégré de paiement</li>
             </ul>
@@ -90,7 +90,7 @@
     <div class="objectif">
         <h3 class="objectif__content">
             Mon objectif en tant que concepteur de site web est de proposer une expérience
-            utilisateur fluide et agréable, intuitive dès le premier coup d’oeil.
+            utilisateur fluide et agréable, intuitive dès le premier coup d’œil.
         </h3>
     </div>
 
@@ -99,17 +99,17 @@
         <div class="description">
             <h3 class="background-primary">A propos de moi</h3>
             <p>
-                Je suis un développeur de sites web passionné et investit dans la création de sites
+                Je suis un développeur de sites web passionné et investis dans la création de sites
                 fonctionnels, esthétiques et performants pour mes clients. Mon expérience et ma
                 compréhension de vos besoins me permettront de concevoir un site web sur mesure qui
-                reflète votre identité. Je suis constamment à jour avec les dernières tendances et
-                meilleures pratiques du développement web afin de fournir des sites modernes et
-                innovants. Je m'engage à offrir un service personnalisé, une communication
-                transparente et un soutien continu pour garantir la satisfaction de mes clients.
-                Travailler avec moi, c'est collaborer avec un partenaire fiable et dévoué, prêt à
-                donner vie à votre vision en ligne.
+                reflète votre identité. Je suis constamment à jour sur les dernières tendances et
+                les meilleures pratiques du développement web afin de fournir des sites modernes et
+                innovants. Je m'engage à offrir un service personnalisé et une communication
+                transparente pour garantir la satisfaction de mes clients. Travailler avec moi,
+                c'est collaborer avec un partenaire fiable et dévoué, prêt à donner vie à votre
+                vision en ligne.
             </p>
-            <NuxtLink to="/a-propos" class="description__link hover-effect">
+            <NuxtLink to="/a-propos" class="description__link hover-effect text-primary">
                 En savoir plus <nuxt-icon name="right-arrow"></nuxt-icon>
             </NuxtLink>
         </div>
@@ -444,12 +444,18 @@
 }
 
 @media (min-width: 1200px) {
-    .trust-me.logo-list__item {
-        width: 150px;
-        height: 150px;
+    .trust-me {
+        .logo-list {
+            gap: 4rem;
 
-        img {
-            width: 100px;
+            &__item {
+                width: 150px;
+                height: 150px;
+
+                img {
+                    width: 100px;
+                }
+            }
         }
     }
 }

@@ -6,7 +6,7 @@
             <p>
                 Si vous avez un projet de site vitrine, un e-shop, un site de gestion de société ou
                 tout autre projet, vous pouvez me contacter soit grâce au formulaire soit à l'aide
-                de mes coordonnées ci <span class="hide-mobile">contre</span
+                de mes coordonnées ci-<span class="hide-mobile">contre</span
                 ><span class="hide-desktop">dessous</span>. <br />
             </p>
             <p class="hide-mobile">N’hésitez pas à :</p>
@@ -28,7 +28,7 @@
             <img src="/img/home.svg" alt="home" class="contact__img hide-mobile" />
             <h2 class="background-primary">Contact</h2>
             <div class="contact__item">
-                <nuxt-icon name="email2" class="contact__item__icon" filled></nuxt-icon>
+                <nuxt-icon name="email" class="contact__item__icon" filled></nuxt-icon>
                 <span>:</span>
                 <NuxtLink to="mailto:contact@raphaelbeekmann.com" class="text-primary hover-effect">
                     contact@raphaelbeekmann.com

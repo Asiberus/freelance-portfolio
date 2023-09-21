@@ -80,7 +80,7 @@
                 </div>
                 <div class="contact">
                     <NuxtLink to="mailto:contact@raphaelbeekmann.com" class="contact__item">
-                        <nuxt-icon name="email2" filled></nuxt-icon>
+                        <nuxt-icon name="email" filled></nuxt-icon>
                         <span>:</span>
                         contact@raphaelbeekmann.com
                     </NuxtLink>

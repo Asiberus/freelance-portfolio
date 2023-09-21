@@ -8,14 +8,14 @@
                     Je suis concepteur de site web depuis maintenant une dizaine d’année. J’ai tout
                     d’abord intégré une école d’ingénieur. J’y ai appris la base de mes compétences,
                     des différentes technologies permettant de créer des sites web à la gestion de
-                    projet. Une fois mes études finalisées j’ai commencé à travailler en tant que
+                    projet. Une fois mes études finalisées, j’ai commencé à travailler en tant que
                     consultant, en CDI tout d’abord puis en freelance. Les nombreux projets sur
                     lesquels j’ai travaillé m’ont permis d’avoir une vision globale du milieu, des
-                    avantages et inconvénients de chaque technologies et des bonnes pratiques à
+                    avantages et inconvénients de chaque technologie et des bonnes pratiques à
                     respecter.
                 </p>
                 <p>
-                    La création de site web est devenu une véritable passion au fil des années. Je
+                    La création de site web est devenue une véritable passion au fil des années. Je
                     me tiens régulièrement au courant des nouveautés et des technologies émergentes.
                     Le développement web est milieu évoluant très vite, il est donc important
                     d’effectuer cette veille.
@@ -29,22 +29,22 @@
                     Le web est, pour moi, le futur des applications informatiques. Plus besoin
                     d’installation, de longues configurations ou de limitations relatives à un
                     système d’exploitation. Cela permet aux entreprises de proposer leurs services à
-                    un très grand nombre d’utilisateurs et à un cout réduit. De nombreuses société
+                    un très grand nombre d’utilisateurs et à un coût réduit. De nombreuses sociétés
                     ont fait le choix de proposer leurs services directement à travers un site web.
                 </p>
                 <p>
-                    L’utilisation d’Internet est donc devenu une part prépondérante de notre vie. Il
-                    est important pour moi de veiller à ce que son utilisation soit la plus fluide
-                    possible. Je m’efforce, dans chacun des sites que je produis, de proposer au
-                    visiteur une expérience agréable et intuitive. Plus un site sera simple et
-                    agréable à utiliser, plus il sera marquant pour l’utilisateur et le taux de
+                    L’utilisation d’Internet est donc devenue une part prépondérante de notre vie.
+                    Il est important pour moi de veiller à ce que son utilisation soit la plus
+                    fluide possible. Je m’efforce, dans chacun des sites que je produis, de proposer
+                    au visiteur une expérience agréable et intuitive. Plus un site sera simple et
+                    fluide à utiliser, plus il sera marquant pour l’utilisateur et le taux de
                     conversion se retrouvera augmenté. Il est également important de veiller à
-                    l’accessibilité du site, c’est à dire, à faciliter son utilisation pour des
-                    personnes malvoyantes ou ayant besoin d’outils aidant la consultation du site.
+                    l’accessibilité du site, c’est-à-dire faciliter son utilisation pour des
+                    personnes malvoyantes ou ayant besoin d’outils pour consulter un site.
                 </p>
                 <p>
-                    Ces réflexions sur le design d’un site sont appelé UX/UI (user experience, user
-                    interface) et représentent une part importante de la conception d’un site.
+                    Ces réflexions sur le design d’un site sont appelées UX et UI (user experience,
+                    user interface) et représentent une part importante de la conception d’un site.
                 </p>
             </div>
             <img src="/img/values.svg" alt="values" />
@@ -56,7 +56,7 @@
                 <p>
                     Chaque projet commence par l’établissement d’un cahier des charges. Ce document
                     décrit les besoins du client et l’ensemble des fonctionnalités qui devront être
-                    implémentée. Il définit également le design et la charte graphique du site. Mon
+                    implémentées. Il définit également le design et la charte graphique du site. Mon
                     travail consiste à accompagner le client dans la conception de ce document afin
                     d’affiner ses besoins et de concevoir un site représentant son identité et les
                     valeurs qu’il souhaite transmettre.
@@ -69,8 +69,8 @@
                     fonctionnalités demandées.
                 </p>
                 <p>
-                    La dernière étape de la conception d’un site web est appelé le déploiement. Cela
-                    consiste par l’achat d’un nom de domaine, la configuration d’un serveur et
+                    La dernière étape de la conception d’un site web est appelée le déploiement.
+                    Cela consiste par l’achat d’un nom de domaine, la configuration d’un serveur et
                     l’ouverture du site sur Internet.
                 </p>
                 <p>
