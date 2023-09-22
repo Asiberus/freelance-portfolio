@@ -467,7 +467,7 @@ footer {
             text-align: right;
             font-size: 0.6rem;
             font-style: italic;
-            color: var(--primary-700);
+            color: var(--primary-800);
         }
     }
 }
