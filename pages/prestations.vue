@@ -55,6 +55,20 @@
     </div>
 </template>
 
+<script setup lang="ts">
+const description =
+    'Création de site web performant, impactant et moderne. Je vous accompagne dans la réalisation de votre projet,  que vous n’ayez qu’une simple idée ou bien une vision claire en tête'
+
+useSeoMeta({
+    description,
+    ogTitle: 'Raphael Beekmann - Prestations',
+    ogDescription: description,
+    ogUrl: 'https://www.raphaelbeekmann.com/prestations',
+    twitterTitle: 'Raphael Beekmann - Prestations',
+    twitterDescription: description,
+})
+</script>
+
 <style scoped lang="scss">
 .reference {
     padding: 1rem 1rem 2rem;

@@ -61,3 +61,9 @@
         d’un abonnement correspondant au coût du service e-mail.
     </reference-item>
 </template>
+
+<script setup lang="ts">
+useSeoMeta({
+    title: 'Prestations - Fonctionnalité',
+})
+</script>

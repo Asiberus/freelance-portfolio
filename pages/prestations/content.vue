@@ -28,3 +28,9 @@
         souhaitées.
     </reference-item>
 </template>
+
+<script setup lang="ts">
+useSeoMeta({
+    title: 'Prestations - Contenu',
+})
+</script>

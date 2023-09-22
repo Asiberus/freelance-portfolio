@@ -79,3 +79,9 @@
         et par des personnes différentes.
     </reference-item>
 </template>
+
+<script setup lang="ts">
+useSeoMeta({
+    title: 'Prestations - Design',
+})
+</script>

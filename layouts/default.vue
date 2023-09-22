@@ -131,7 +131,7 @@
 const LINKS = [
     { name: 'Accueil', to: '/' },
     { name: 'Prestations', to: '/prestations' },
-    { name: 'À propos', to: '/a-propos' },
+    { name: 'A propos', to: '/a-propos' },
 ]
 
 const linksAnimationSteps = [

@@ -42,3 +42,9 @@
         et dans le format souhaitée (archive, fichier texte, e-mail).
     </reference-item>
 </template>
+
+<script setup lang="ts">
+useSeoMeta({
+    title: 'Prestations - Support',
+})
+</script>
