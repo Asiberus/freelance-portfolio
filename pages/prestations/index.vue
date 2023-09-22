@@ -36,3 +36,9 @@
         possible d’y ajouter un accès client pour les services que vous proposez.
     </reference-item>
 </template>
+
+<script setup lang="ts">
+useSeoMeta({
+    title: 'Prestations - Pack',
+})
+</script>

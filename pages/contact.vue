@@ -89,12 +89,18 @@
     </div>
 </template>
 
-<script>
-import { defineComponent } from 'vue'
-import ContactForm from '~/components/ContactForm.vue'
+<script setup lang="ts">
+const description =
+    'Création de site web performant, impactant et moderne. Je vous accompagne dans la réalisation de votre projet,  que vous n’ayez qu’une simple idée ou bien une vision claire en tête'
 
-export default defineComponent({
-    components: { ContactForm },
+useSeoMeta({
+    title: 'Contact',
+    description,
+    ogTitle: 'Raphael Beekmann - Contact',
+    ogDescription: description,
+    ogUrl: 'https://www.raphaelbeekmann.com/contact',
+    twitterTitle: 'Raphael Beekmann - Contact',
+    twitterDescription: description,
 })
 </script>
 

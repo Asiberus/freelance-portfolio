@@ -30,3 +30,9 @@
         le développement d’une fonctionnalité ou d’une page sera finalisé.
     </reference-item>
 </template>
+
+<script setup lang="ts">
+useSeoMeta({
+    title: 'Prestations - Gestion De Projet',
+})
+</script>

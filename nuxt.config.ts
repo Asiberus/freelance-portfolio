@@ -7,6 +7,16 @@ export default defineNuxtConfig({
         head: {
             charset: 'utf-8',
             viewport: 'width=device-width, initial-scale=1.0',
+            link: [{ rel: 'icon', type: 'image/png', href: '/img/favicon/favicon.png' }],
+            meta: [
+                { name: 'robots', content: 'index, follow' },
+                { name: 'author', content: 'Raphael Beekmann' },
+                { property: 'og:type', content: 'website' },
+                { property: 'og:site_name', content: 'Raphael Beekmann' },
+                { property: 'og:locale', content: 'fr_FR' },
+                { property: 'og:url', content: 'https://www.raphaelbeekmann.com/' },
+                { name: 'twitter:card', content: 'summary_large_image' },
+            ],
         },
     },
 })

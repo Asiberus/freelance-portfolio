@@ -32,8 +32,8 @@
                 <li>Décrire vos valeurs et votre identité visuelle</li>
             </ul>
             <NuxtLink to="/prestations" class="carousel__item__link hover-effect text-primary"
-                >En savoir plus</NuxtLink
-            >
+                >En savoir plus
+            </NuxtLink>
         </div>
 
         <div to="/prestations" class="carousel__item">
@@ -45,8 +45,8 @@
                 <li>Système intégré de paiement</li>
             </ul>
             <NuxtLink to="/prestations" class="carousel__item__link hover-effect text-primary"
-                >En savoir plus</NuxtLink
-            >
+                >En savoir plus
+            </NuxtLink>
         </div>
 
         <div to="/prestations" class="carousel__item">
@@ -60,8 +60,8 @@
                 <li>Archivage et sauvegarde de vos données</li>
             </ul>
             <NuxtLink to="/prestations" class="carousel__item__link hover-effect text-primary"
-                >En savoir plus</NuxtLink
-            >
+                >En savoir plus
+            </NuxtLink>
         </div>
 
         <div to="/prestations/content" class="carousel__item">
@@ -75,8 +75,8 @@
             <NuxtLink
                 to="/prestations/content"
                 class="carousel__item__link hover-effect text-primary"
-                >En savoir plus</NuxtLink
-            >
+                >En savoir plus
+            </NuxtLink>
         </div>
     </div>
 
@@ -99,7 +99,7 @@
         <div class="description">
             <h3 class="background-primary">A propos de moi</h3>
             <p>
-                Je suis un développeur de sites web passionné et investis dans la création de sites
+                Je suis un développeur de sites web passionné et investi dans la création de sites
                 fonctionnels, esthétiques et performants pour mes clients. Mon expérience et ma
                 compréhension de vos besoins me permettront de concevoir un site web sur mesure qui
                 reflète votre identité. Je suis constamment à jour sur les dernières tendances et
@@ -110,7 +110,8 @@
                 vision en ligne.
             </p>
             <NuxtLink to="/a-propos" class="description__link hover-effect text-primary">
-                En savoir plus <nuxt-icon name="right-arrow"></nuxt-icon>
+                En savoir plus
+                <nuxt-icon name="right-arrow"></nuxt-icon>
             </NuxtLink>
         </div>
     </div>
@@ -141,6 +142,22 @@
         <ContactForm></ContactForm>
     </div>
 </template>
+
+<script setup lang="ts">
+const title = 'Raphael Beekmann - Développeur web'
+const description =
+    'Création de site web performant, impactant et moderne. Je vous accompagne dans la réalisation de votre projet,  que vous n’ayez qu’une simple idée ou bien une vision claire en tête'
+
+useSeoMeta({
+    title,
+    description,
+    ogTitle: title,
+    ogDescription: description,
+    ogUrl: 'https://www.raphaelbeekmann.com/',
+    twitterTitle: title,
+    twitterDescription: description,
+})
+</script>
 
 <style scoped lang="scss">
 .jumbotron {
