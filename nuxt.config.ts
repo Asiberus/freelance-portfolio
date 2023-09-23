@@ -1,6 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     ssr: true,
+    nitro: {
+        prerender: {
+            routes: ['/404.html'],
+        },
+    },
     modules: ['nuxt-icons'],
     css: ['normalize.css', '~/assets/css/main.scss'],
     app: {
