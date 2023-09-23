@@ -444,7 +444,7 @@ footer {
             display: flex;
             justify-content: center;
             column-gap: 1.5rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
 
             &__item {
                 height: 40px;
