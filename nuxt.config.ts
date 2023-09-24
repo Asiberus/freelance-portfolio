@@ -3,7 +3,8 @@ export default defineNuxtConfig({
     ssr: true,
     nitro: {
         prerender: {
-            routes: ['/404.html'],
+            crawlLinks: true,
+            routes: ['/', '/404.html'],
         },
     },
     modules: ['nuxt-icons'],
@@ -19,9 +20,15 @@ export default defineNuxtConfig({
                 { property: 'og:type', content: 'website' },
                 { property: 'og:site_name', content: 'Raphael Beekmann' },
                 { property: 'og:locale', content: 'fr_FR' },
-                { property: 'og:image', content: '/img/favicon/favicon.png' },
+                {
+                    property: 'og:image',
+                    content: 'https://raphaelbeekmann.com/img/favicon/favicon.png',
+                },
                 { name: 'twitter:card', content: 'summary_large_image' },
-                { name: 'twitter:image', content: '/img/favicon/favicon.png' },
+                {
+                    name: 'twitter:image',
+                    content: 'https://raphaelbeekmann.com/img/favicon/favicon.png',
+                },
             ],
         },
     },
