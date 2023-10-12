@@ -79,10 +79,10 @@
                     <h3>Design & Construction de site web</h3>
                 </div>
                 <div class="contact">
-                    <NuxtLink to="mailto:contact@raphaelbeekmann.com" class="contact__item">
+                    <NuxtLink to="mailto:contact@raphael-beekmann.com" class="contact__item">
                         <nuxt-icon name="email" filled></nuxt-icon>
                         <span>:</span>
-                        contact@raphaelbeekmann.com
+                        contact@raphael-beekmann.com
                     </NuxtLink>
 
                     <NuxtLink to="tel:+33 6 25 65 22 72" class="contact__item">

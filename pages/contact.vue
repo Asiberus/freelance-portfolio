@@ -30,8 +30,10 @@
             <div class="contact__item">
                 <nuxt-icon name="email" class="contact__item__icon" filled></nuxt-icon>
                 <span>:</span>
-                <NuxtLink to="mailto:contact@raphaelbeekmann.com" class="text-primary hover-effect">
-                    contact@raphaelbeekmann.com
+                <NuxtLink
+                    to="mailto:contact@raphael-beekmann.com"
+                    class="text-primary hover-effect">
+                    contact@raphael-beekmann.com
                 </NuxtLink>
             </div>
             <div class="contact__item">
