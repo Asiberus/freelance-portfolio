@@ -153,7 +153,7 @@ useSeoMeta({
     description,
     ogTitle: title,
     ogDescription: description,
-    ogUrl: 'https://www.raphaelbeekmann.com/',
+    ogUrl: 'https://www.raphael-beekmann.com/',
     twitterTitle: title,
     twitterDescription: description,
 })

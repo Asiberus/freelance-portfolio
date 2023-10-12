@@ -22,12 +22,12 @@ export default defineNuxtConfig({
                 { property: 'og:locale', content: 'fr_FR' },
                 {
                     property: 'og:image',
-                    content: 'https://raphaelbeekmann.com/img/favicon/favicon.png',
+                    content: 'https://raphael-beekmann.com/img/favicon/favicon.png',
                 },
                 { name: 'twitter:card', content: 'summary_large_image' },
                 {
                     name: 'twitter:image',
-                    content: 'https://raphaelbeekmann.com/img/favicon/favicon.png',
+                    content: 'https://raphael-beekmann.com/img/favicon/favicon.png',
                 },
             ],
         },
