@@ -101,8 +101,6 @@ useSeoMeta({
     ogTitle: 'Raphael Beekmann - Contact',
     ogDescription: description,
     ogUrl: 'https://www.raphael-beekmann.com/contact',
-    twitterTitle: 'Raphael Beekmann - Contact',
-    twitterDescription: description,
 })
 </script>
 

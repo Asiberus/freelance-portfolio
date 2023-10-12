@@ -94,8 +94,6 @@ useSeoMeta({
     ogTitle: 'Raphael Beekmann - A Propos',
     ogDescription: description,
     ogUrl: 'https://www.raphael-beekmann.com/a-propos',
-    twitterTitle: 'Raphael Beekmann - A Propos',
-    twitterDescription: description,
 })
 </script>
 

@@ -64,8 +64,6 @@ useSeoMeta({
     ogTitle: 'Raphael Beekmann - Prestations',
     ogDescription: description,
     ogUrl: 'https://www.raphael-beekmann.com/prestations',
-    twitterTitle: 'Raphael Beekmann - Prestations',
-    twitterDescription: description,
 })
 </script>
 
