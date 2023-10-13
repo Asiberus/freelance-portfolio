@@ -186,7 +186,6 @@ function scrollToTheTop(): void {
 <style scoped lang="scss">
 .wrapper {
     min-height: 100vh;
-    max-width: 100%;
 }
 
 .header {
