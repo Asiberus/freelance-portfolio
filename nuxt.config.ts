@@ -7,7 +7,7 @@ export default defineNuxtConfig({
             routes: ['/', '/404.html'],
         },
     },
-    modules: ['nuxt-icons'],
+    modules: ['nuxt-icons', 'nuxt-gtag'],
     css: ['normalize.css', '~/assets/css/main.scss'],
     app: {
         head: {
@@ -29,5 +29,8 @@ export default defineNuxtConfig({
                 { name: 'twitter:creator', content: '@Asiberus' },
             ],
         },
+    },
+    gtag: {
+        id: 'G-5RPFG82W9X',
     },
 })
